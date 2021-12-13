@@ -3,6 +3,7 @@ package com.example.TravelGuide.Places;
 
 import com.example.TravelGuide.Cities.Cities;
 import com.example.TravelGuide.Cities.CitiesService;
+import com.example.TravelGuide.Trips.Trips;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class PlacesController {
     }
 
     @PostMapping
-    public Places createPlace(@RequestBody Places place){
+    public String createPlace(@RequestBody Places place){
         return placesService.addPlace(place);
     }
 
@@ -43,6 +44,12 @@ public class PlacesController {
     public List<Places> addPlaces(@RequestBody List<Places> places){
         placesService.addPlaces(places);
         return getPlaces();
+    }
+
+    //    int TripId, int UserId
+    @PutMapping("/{placeId}/trips/{tripId}")
+    public Places addTripToPlace(@RequestBody @PathVariable int placeId, @PathVariable int tripId) {
+        return placesService.addTripToPlace(placeId,tripId);
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.TravelGuide.Places;
 
 import com.example.TravelGuide.Cities.Cities;
 import com.example.TravelGuide.Tags.Tags;
+import com.example.TravelGuide.Trips.Trips;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,10 +23,14 @@ public class Places {
     @JoinColumn(name = "city_id")
     private Cities city;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Tags> tag = new ArrayList<>();
 
-    public Places(int id, String name, String description, String image, String location, Cities city, List<Tags> tag) {
+    @ManyToMany
+    private List<Trips> trips = new ArrayList<>();
+
+
+    public Places(int id, String name, String description, String image, String location, Cities city, List<Tags> tag, List<Trips> trips) {
         Id = id;
         Name = name;
         Description = description;
@@ -33,6 +38,7 @@ public class Places {
         Location = location;
         this.city = city;
         this.tag = tag;
+        this.trips = trips;
     }
 
     public Places() {
@@ -92,5 +98,17 @@ public class Places {
 
     public void setTag(List<Tags> tag) {
         this.tag = tag;
+    }
+
+    public List<Trips> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<Trips> trips) {
+        this.trips = trips;
+    }
+
+    public void trips(Trips trip) {
+        trips.add(trip);
     }
 }

@@ -27,7 +27,7 @@ public class CitiesController {
     }
 
     @PostMapping
-    public Cities createCity(@RequestBody Cities city){
+    public String createCity(@RequestBody Cities city){
         return citiesService.addCity(city);
     }
 

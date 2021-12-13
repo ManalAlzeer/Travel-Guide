@@ -1,6 +1,11 @@
 package com.example.TravelGuide.User;
 
+import com.example.TravelGuide.Trips.Trips;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Users")
@@ -16,6 +21,11 @@ public class Users {
     private String Email;
     private String Gender;
 
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "users")
+    private List<Trips> trips = new ArrayList<>();
+
     public Users() {
     }
 
@@ -29,6 +39,11 @@ public class Users {
         Email = email;
         Gender = gender;
     }
+
+    public List<Trips> getTrips() {
+        return trips;
+    }
+
 
     public int getId() {
         return Id;

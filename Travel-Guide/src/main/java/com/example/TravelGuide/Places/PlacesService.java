@@ -1,5 +1,8 @@
 package com.example.TravelGuide.Places;
 
+import com.example.TravelGuide.Trips.Trips;
+import com.example.TravelGuide.Trips.TripsRepository;
+import com.example.TravelGuide.User.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,10 +12,13 @@ import java.util.List;
 public class PlacesService {
 
     private final PlacesRepository placesRepository;
+    private final TripsRepository tripsRepository;
+
 
     @Autowired
-    public PlacesService(PlacesRepository placesRepository){
+    public PlacesService(PlacesRepository placesRepository, TripsRepository tripsRepository){
         this.placesRepository=placesRepository;
+        this.tripsRepository=tripsRepository;
     }
 
     public List<Places> getAll(){
@@ -24,8 +30,9 @@ public class PlacesService {
         return placesRepository.findById(Place_id).orElse(null);
     }
 
-    public Places addPlace(Places place){
-        return placesRepository.save(place);
+    public String addPlace(Places place){
+        placesRepository.save(place);
+        return "created";
 
     }
 
@@ -40,4 +47,10 @@ public class PlacesService {
 
     }
 
+    public Places addTripToPlace(int placeId, int tripId) {
+        Places Place = placesRepository.findById(placeId).get();
+        Trips Trip = tripsRepository.findById(tripId).get();
+        Place.trips(Trip);
+        return placesRepository.save(Place);
+    }
 }

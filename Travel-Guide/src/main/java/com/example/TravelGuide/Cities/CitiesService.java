@@ -24,8 +24,9 @@ public class CitiesService {
         return citiesRepository.findById(City_id).orElse(null);
     }
 
-    public Cities addCity(Cities city){
-        return citiesRepository.save(city);
+    public String addCity(Cities city){
+        citiesRepository.save(city);
+        return "created";
 
     }
 
