@@ -1,8 +1,12 @@
 package com.example.TravelGuide.Cities;
 
 import com.example.TravelGuide.Countries.Countries;
+import com.example.TravelGuide.Places.Places;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "Cities")
@@ -17,6 +21,10 @@ public class Cities {
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "country_id")
     private Countries country;
+
+    @OneToMany(mappedBy = "city")
+    @JsonIgnoreProperties("city")
+    List<Places> places = new ArrayList<>();
 
     public Cities() {
     }
@@ -67,5 +75,13 @@ public class Cities {
 
     public void setCountry(Countries country) {
         this.country = country;
+    }
+
+    public List<Places> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(List<Places> places) {
+        this.places = places;
     }
 }

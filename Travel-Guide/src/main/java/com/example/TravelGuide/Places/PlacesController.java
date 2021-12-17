@@ -46,10 +46,16 @@ public class PlacesController {
         return getPlaces();
     }
 
-    //    int TripId, int UserId
-    @PutMapping("/{placeId}/trips/{tripId}")
-    public Places addTripToPlace(@RequestBody @PathVariable int placeId, @PathVariable int tripId) {
-        return placesService.addTripToPlace(placeId,tripId);
+    @PostMapping ("/addReview")
+    public Places addPlaces(@RequestBody Places places){
+        System.out.println(places);
+        return placesService.addReview(places);
     }
+
+    //    int TripId, int UserId
+//    @PutMapping("/{placeId}/trips/{tripId}")
+//    public Places addTripToPlace(@RequestBody @PathVariable int placeId, @PathVariable int tripId) {
+//        return placesService.addTripToPlace(placeId,tripId);
+//    }
 
 }

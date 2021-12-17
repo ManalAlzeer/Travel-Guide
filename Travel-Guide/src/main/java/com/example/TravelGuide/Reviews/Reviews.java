@@ -2,6 +2,7 @@ package com.example.TravelGuide.Reviews;
 
 import com.example.TravelGuide.Places.Places;
 import com.example.TravelGuide.User.Users;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -14,22 +15,24 @@ public class Reviews {
     private int rating;
     private String comment;
 
-    @ManyToOne(fetch = FetchType.EAGER, optional = true)
-    @JoinColumn(name = "place_id")
-    private Places place;
+//    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+//    @JoinColumn(name = "place_id")
+//    @JsonIgnoreProperties("reviews")
+//    private Places place;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JsonIgnoreProperties("trips")
     @JoinColumn(name = "user_id")
     private Users user;
 
     public Reviews() {
     }
 
-    public Reviews(int id, int rating, String comment, Places place, Users user) {
+    public Reviews(int id, int rating, String comment, Users user) {
         Id = id;
         this.rating = rating;
         this.comment = comment;
-        this.place = place;
+//        this.place = place;
         this.user = user;
     }
 
@@ -57,13 +60,13 @@ public class Reviews {
         this.comment = comment;
     }
 
-    public Places getPlace() {
-        return place;
-    }
-
-    public void setPlace(Places place) {
-        this.place = place;
-    }
+//    public Places getPlace() {
+//        return place;
+//    }
+//
+//    public void setPlace(Places place) {
+//        this.place = place;
+//    }
 
     public Users getUser() {
         return user;

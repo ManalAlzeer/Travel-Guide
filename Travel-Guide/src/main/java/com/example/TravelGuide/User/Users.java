@@ -1,7 +1,9 @@
 package com.example.TravelGuide.User;
 
+import com.example.TravelGuide.Places.Places;
 import com.example.TravelGuide.Trips.Trips;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -22,7 +24,7 @@ public class Users {
     private String Gender;
 
 
-    @JsonIgnore
+    @JsonIgnoreProperties("users")
     @ManyToMany(mappedBy = "users")
     private List<Trips> trips = new ArrayList<>();
 
@@ -44,6 +46,9 @@ public class Users {
         return trips;
     }
 
+    public void setTrips(List<Trips> trips) {
+        this.trips = trips;
+    }
 
     public int getId() {
         return Id;

@@ -1,8 +1,11 @@
 package com.example.TravelGuide.Places;
 
 import com.example.TravelGuide.Cities.Cities;
+import com.example.TravelGuide.Reviews.Reviews;
 import com.example.TravelGuide.Tags.Tags;
 import com.example.TravelGuide.Trips.Trips;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -21,16 +24,22 @@ public class Places {
 
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
     @JoinColumn(name = "city_id")
+    @JsonIgnoreProperties("places")
     private Cities city;
 
     @ManyToMany
     private List<Tags> tag = new ArrayList<>();
 
-    @ManyToMany
+    @JsonIgnoreProperties("places")
+    @ManyToMany(mappedBy = "places")
     private List<Trips> trips = new ArrayList<>();
 
+    @OneToMany
+    @JoinColumn(name = "place_id")
+    List<Reviews> reviews = new ArrayList<>();
 
-    public Places(int id, String name, String description, String image, String location, Cities city, List<Tags> tag, List<Trips> trips) {
+
+    public Places(int id, String name, String description, String image, String location, Cities city, List<Tags> tag, List<Reviews> reviews) {
         Id = id;
         Name = name;
         Description = description;
@@ -38,7 +47,7 @@ public class Places {
         Location = location;
         this.city = city;
         this.tag = tag;
-        this.trips = trips;
+        this.reviews = reviews;
     }
 
     public Places() {
@@ -108,7 +117,15 @@ public class Places {
         this.trips = trips;
     }
 
-    public void trips(Trips trip) {
-        trips.add(trip);
+    public void addreview(Reviews reviews) {
+        this.reviews.add(reviews);
+    }
+
+    public List<Reviews> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Reviews> reviews) {
+        this.reviews = reviews;
     }
 }

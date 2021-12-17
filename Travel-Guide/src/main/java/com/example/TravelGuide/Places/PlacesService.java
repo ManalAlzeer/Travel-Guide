@@ -1,5 +1,7 @@
 package com.example.TravelGuide.Places;
 
+import com.example.TravelGuide.Reviews.Reviews;
+import com.example.TravelGuide.Reviews.ReviewsRepository;
 import com.example.TravelGuide.Trips.Trips;
 import com.example.TravelGuide.Trips.TripsRepository;
 import com.example.TravelGuide.User.Users;
@@ -12,13 +14,13 @@ import java.util.List;
 public class PlacesService {
 
     private final PlacesRepository placesRepository;
-    private final TripsRepository tripsRepository;
+    private final ReviewsRepository reviewsRepository;
 
 
     @Autowired
-    public PlacesService(PlacesRepository placesRepository, TripsRepository tripsRepository){
+    public PlacesService(PlacesRepository placesRepository, ReviewsRepository reviewsRepository){
         this.placesRepository=placesRepository;
-        this.tripsRepository=tripsRepository;
+        this.reviewsRepository=reviewsRepository;
     }
 
     public List<Places> getAll(){
@@ -47,10 +49,18 @@ public class PlacesService {
 
     }
 
-    public Places addTripToPlace(int placeId, int tripId) {
-        Places Place = placesRepository.findById(placeId).get();
-        Trips Trip = tripsRepository.findById(tripId).get();
-        Place.trips(Trip);
-        return placesRepository.save(Place);
+    public Places addReview(Places places) {
+        Places p = placesRepository.findById(places.getId()).orElse(null);
+        Reviews r = reviewsRepository.save(places.getReviews().get(0));
+        p.addreview(r);
+        placesRepository.save(p);
+        return p;
     }
+
+//    public Places addTripToPlace(int placeId, int tripId) {
+//        Places Place = placesRepository.findById(placeId).get();
+//        Trips Trip = tripsRepository.findById(tripId).get();
+//        Place.trips(Trip);
+//        return placesRepository.save(Place);
+//    }
 }

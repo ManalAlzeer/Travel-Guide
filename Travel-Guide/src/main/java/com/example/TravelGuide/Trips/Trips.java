@@ -3,6 +3,7 @@ package com.example.TravelGuide.Trips;
 import com.example.TravelGuide.Places.Places;
 import com.example.TravelGuide.User.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -17,11 +18,12 @@ public class Trips {
     private String departure_date;
     private String return_date;
 
+    @JsonIgnoreProperties("trips")
     @ManyToMany
     private List<Users> users = new ArrayList<>();
 
-    @JsonIgnore
-    @ManyToMany(mappedBy = "trips")
+    @JsonIgnoreProperties("trips")
+    @ManyToMany
     private List<Places> places = new ArrayList<>();
 
     public Trips() {
@@ -77,6 +79,7 @@ public class Trips {
         return places;
     }
 
+    public void places(Places place) {places.add(place);}
 
     public void users(Users user) {
         users.add(user);
