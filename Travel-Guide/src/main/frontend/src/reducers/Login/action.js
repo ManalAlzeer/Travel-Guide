@@ -6,6 +6,14 @@ export const login = (user) => {
   };
 };
 
+export const updateImage = (user) =>{
+  // user: is an array of objects
+  return {
+    type: "UPDATE_IMAGE",
+    payload: user,
+  };
+}
+
 export const UserType = (type) => {
   // user: is an String 
   return {

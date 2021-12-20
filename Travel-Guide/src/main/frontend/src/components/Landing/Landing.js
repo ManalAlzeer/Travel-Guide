@@ -1,10 +1,11 @@
-import Header from "./Header";
-import roma from "../images/rome-italy.jpg";
-import paris from "../images/paris-f.jpg";
-import dubai from "../images/dubai-u.jpg";
+import Header from "../Navbar/Header";
+import roma from "../../images/rome-italy.jpg";
+import paris from "../../images/paris-f.jpg";
+import dubai from "../../images/dubai-u.jpg";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "./Landing.css"
 
 function Landing() {
     const state = useSelector((state) => {
@@ -20,6 +21,7 @@ function Landing() {
       {console.log("State: ")}
       {console.log(state.UserType)}
       <Header />
+
       <div className="Landing">
         <div className="gaid">
           <div className="gaidCard" style={{ background: "#606062" }}>
@@ -77,15 +79,15 @@ function Landing() {
           </div>
 
           <div className="container-group">
-            <div className="pic">
+            <div className="pic" onClick={() => { navigate(`/CityDetails/8`);}}>
               <img className="img-effict" src={roma} alt="profile_picture" />
               <h2>Roma <i className="fas fa-chevron-circle-right"></i></h2>
             </div>
-            <div className="pic">
+            <div className="pic" onClick={() => { navigate(`/CityDetails/6`);}}>
               <img className="img-effict" src={paris} alt="profile_picture" />
               <h2>Paris <i className="fas fa-chevron-circle-right"></i></h2>
             </div>
-            <div className="pic">
+            <div className="pic" onClick={() => { navigate(`/CityDetails/4`);}}>
               <img className="img-effict" src={dubai} alt="profile_picture" />
               <h2>Dubai <i className="fas fa-chevron-circle-right"></i></h2>
             </div>

@@ -1,0 +1,75 @@
+
+/* header.css */  
+  .wallpaper .container{
+    padding: 20%;
+    text-align: center;
+  }
+  
+  .wallpaper .container .heading{
+    font-family: 'Rouge Script', cursive;
+    font-size: 78px;
+    letter-spacing: 3px;
+  }
+  
+  .wallpaper .container p{
+    color: #ffffff;
+    font-size: 18px;
+    text-shadow: 2px 1px 1.7px #443931;
+  }
+  
+  .wallpaper .container .coloring{
+    color: #D3A65A;
+    font-family: 'Rouge Script', cursive;
+  }
+  
+  .navMenu a {
+    color: #f6f4e6;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .navMenu a:hover {
+    color: #D3A65A;
+  }
+  
+  /* Navbar.css */
+  .header {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: #2D2422;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header .logo{
+    z-index: 1;
+    margin-left: 25px;
+  }
+  
+  .header .logo .coloring{
+    color: #D3A65A;
+  }
+  
+  .header .logo a{
+    font-family: 'Rouge Script', cursive;
+  }
+  
+  .header a {
+    color: rgb(255, 255, 255);
+    float: left;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+  
+  }  

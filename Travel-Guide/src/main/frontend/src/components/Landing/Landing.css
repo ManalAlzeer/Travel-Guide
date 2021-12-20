@@ -1,0 +1,94 @@
+
+/* Landing.css */
+.Landing .gaid{
+  padding: 0 10% 5% 10%;
+  display: flex;
+  justify-content: center;
+}
+  
+.Landing .gaid .gaidCard{
+    display: grid;
+    color: #ffffff;
+    text-shadow: 1px 1px #44393183;
+    height: 300px;
+    width: 280px;
+    padding: 20px;
+    overflow: hidden;
+    grid-template-rows: auto auto auto auto;
+}
+  
+  .Landing .gaid .gaidCard .link .icon{
+    font-size:48px;
+    align-self: flex-end;
+    color: #e9e9e9;
+  }
+  
+  .Landing .gaid .gaidCard .link .icon:hover{
+    color: #fff;
+  }
+
+  .Landing .titles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .Landing .titles h2{
+    text-align: left;
+    color: #2D2422;
+    font-size: 48px;
+  
+  }
+  
+  .Landing .titles p{
+    font-size: 14px;
+  }
+  
+  .Landing .cties-group .titles .btn{
+      border-radius: 9999px;
+      border: #2d242279 solid 1px;
+      padding: .5rem 1.25rem;
+      font-size: 14px;
+      font-weight: 500;
+  }
+  
+  .Landing .countries-group,
+  .Landing .cties-group{
+    padding: 5% 13% 10% 13%;
+  }
+  
+  .Landing .container-group{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+  .Landing .container-group .pic {
+    width: 350px;
+    height: 260px;
+    margin: 0 auto;
+  }
+  
+  .Landing .container-group .pic img{
+    display: block;
+    width: 300px;
+    height: 260px;
+    border-radius: 6%;
+    margin: 0 auto;
+  }
+   
+  .Landing .container-group .pic h2{
+    color: #2D2422;
+    text-align: left;
+    margin:  0 15px;
+    padding: 0% 5%;
+  }
+  .Landing .container-group .pic h2 i{
+    font-size: 16px;
+  }
+  
+  .Landing .container-group .pic:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  

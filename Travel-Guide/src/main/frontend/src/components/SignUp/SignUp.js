@@ -1,8 +1,9 @@
-import { login, UserType } from "../reducers/Login/action";
+import { login, UserType } from "../../reducers/Login/action";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./SignUp.css"
 
 function SignUp() {
   const [msg, setmsg] = useState("");
@@ -121,7 +122,7 @@ function SignUp() {
             age: age,
             phoneNumber: "" + phoneNumber + "",
             email: "" + Email + "",
-            gender: "=" + gender + "",
+            gender: "" + gender + "",
           })
           .then((res) => {
             console.log(res.data);

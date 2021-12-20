@@ -1,0 +1,152 @@
+.profile-des {
+  background-color: #555555;
+  padding-bottom: 5%;
+  justify-content: center;
+}
+
+.profile-des .page-header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #555555),
+    url(../../images/papers.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: grid;
+  flex-direction: column;
+  justify-content: stretch;
+  border: none;
+}
+
+.profile-des .main-profile {
+  background: #ececec;
+  position: relative;
+  margin: -180px 130px 0px;
+  border-radius: 6px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+    0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  display: grid;
+}
+
+.profile-des .main-profile .profile {
+  text-align: center;
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 90px auto auto;
+}
+
+.profile-des .main-profile img {
+  max-width: 160px;
+  width: 100%;
+  margin: 0 auto;
+  -webkit-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+
+/* image in avatar */
+.img-raised {
+  box-shadow: 0 5px 15px -8px rgba(0, 0, 0, 0.24),
+    0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+.rounded-circle {
+  border-radius: 50% !important;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+/* end image in avatar */
+.profile-des .main-profile .profile .name {
+  margin-bottom: 5px;
+}
+
+.profile-des .main-profile .profile .name p {
+  color: #d3a65a;
+}
+
+.profile-des .main-profile .profile .name .title {
+  color: #443931;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.profile-des .main-profile .profile .upload {
+  display: flex;
+  padding: 0 5% 5% 5%;
+}
+
+.profile-des .main-profile .card-block {
+  padding: 0% 10%;
+}
+
+.profile-des .main-profile .card-block .row{
+  padding-left: 4%;
+}
+
+
+.profile-des .main-profile h6 {
+  font-size: 14px;
+}
+
+.prof-card .card-block p {
+  line-height: 25px;
+}
+
+.b-b-default {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.m-b-20 {
+  margin-bottom: 20px;
+}
+
+.p-b-5 {
+  padding-bottom: 5px !important;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}
+
+.text-muted {
+  color: #919aa3 !important;
+}
+
+.f-w-600 {
+  font-weight: 600;
+}
+
+.m-t-40 {
+  margin-top: 20px;
+}
+
+.profile-des .main-profile .trips-card {
+  padding: 2% 10%;
+}
+
+.profile-des .main-profile .trips-card .card-body{
+display: grid;
+grid-template-columns: auto auto auto;
+row-gap: 5px;
+column-gap: 15px;
+padding-bottom: 5%;
+justify-content: center;
+}
+
+.profile-des .main-profile .trips-card .card-body .tp-card{
+  padding: 15px;
+  width: 200px;
+  background-color: #d3a75a52;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.profile-des .main-profile .trips-card .card-body
+.tp-card .plaace-card{
+  text-transform: capitalize;
+  font-size: 18px;
+} 
+

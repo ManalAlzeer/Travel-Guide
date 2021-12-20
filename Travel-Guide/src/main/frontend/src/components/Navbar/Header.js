@@ -1,5 +1,5 @@
+import "./Navbar.css"
 function Header() {
-
     return(
         <>
         <div className="wallpaper">
@@ -10,8 +10,5 @@ function Header() {
         </div>
         </>
     )
-
-
 }
-
 export default Header;

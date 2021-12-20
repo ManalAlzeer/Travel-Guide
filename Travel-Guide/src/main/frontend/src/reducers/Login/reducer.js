@@ -22,6 +22,11 @@ const usersReducer = (state = initialState, { type, payload }) => {
         currentUser: {},
         isLoggedIn: false,
       };
+    case "UPDATE_IMAGE":
+      return {
+        currentUser: payload,
+        isLoggedIn: true,
+      }
     default:
       return state;
   }

@@ -1,0 +1,36 @@
+
+.city-detail{
+    padding-bottom: 5%;
+    justify-content: center;
+}
+
+.city-detail .tow-divs{
+    display: grid;
+    grid-template-columns: 700px auto;
+    padding: 5%;
+}
+
+.city-detail .tow-divs div.relative {
+    position: relative;
+    width: 520px;
+    height: 400px;
+    background: #190e09e0;
+    margin: 8%;
+  } 
+  
+  .city-detail .tow-divs div.absolute {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    width: 500px;
+    height: 200px;
+  }
+
+  .city-detail .tow-divs .place-info{
+      padding: 25% 10%;
+  }
+
+  .city-detail .tow-divs .place-info h2{
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
