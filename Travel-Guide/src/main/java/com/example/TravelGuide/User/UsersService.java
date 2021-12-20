@@ -40,4 +40,14 @@ public class UsersService {
 
     }
 
+    public Users addImage(String id, Users user) {
+        int Id = Integer.parseInt(id);
+        Users newUser = usersRepository.findById(Id).orElse(null);
+        if(newUser != null){
+            newUser.setImage(user.getImage());
+            usersRepository.save(newUser);
+        }
+        return newUser;
+    }
+
 }

@@ -43,4 +43,11 @@ public class UsersController {
     }
 
 
+    @PutMapping("/image/{id}")
+    public Users addImage(@PathVariable String id , @RequestBody Users user){
+        usersService.addImage(id,user);
+        return getUser(id);
+    }
+
+
 }

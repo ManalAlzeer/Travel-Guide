@@ -16,6 +16,7 @@ public class Cities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String Name;
+    @Column(length = 3000)
     private String Description;
     private String Image;
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
@@ -27,6 +28,11 @@ public class Cities {
     List<Places> places = new ArrayList<>();
 
     public Cities() {
+    }
+
+    public Cities(String name, String description) {
+        Name = name;
+        Description = description;
     }
 
     public Cities(int id, String name, String description, String image, Countries country) {
