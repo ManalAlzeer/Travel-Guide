@@ -8,8 +8,9 @@ import Places from "./components/Places/Places";
 import PlaceDetails from "./components/PlacesDetails/PlaceDetails";
 import CityDetails from "./components/CityDetails/CityDetails";
 import AdminPage from "./components/Admin/AdminPage";
-import Footer from "./components/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import Trips from "./components/Trips/Trips";
+import TripsDetails from "./components/TripDetails/TripDetails";
 
 function App() {
 
@@ -26,8 +27,9 @@ function App() {
         <Route path="/Search" element={<Search />} />
         <Route path="/Places" element={<Places/>}/>
         <Route path="/AdminPage/:id" element={<AdminPage/>}/>
+        <Route path="/Trips" element={<Trips/>}/>
+        <Route path="/TripsDetails/:id" element={<TripsDetails/>}/>
       </Routes>
-      <Footer/>
       </ScrollToTop>
     </BrowserRouter>
   );

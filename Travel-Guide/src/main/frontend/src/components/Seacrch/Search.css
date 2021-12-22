@@ -1,140 +1,134 @@
-.search-wallpaper{
-  background-image:linear-gradient(
-    rgba(0, 0, 0, 0),
-    #555555
-  ),
-  url(../../images/papers.png);
+.search-wallpaper {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #555555),
+    url(../../images/papers.png);
   background-size: cover;
   background-repeat: no-repeat;
   text-shadow: 1px 1px #44393183;
-  min-height: 100vh;
+  min-height: 80vh;
   display: grid;
   flex-direction: column;
   justify-content: stretch;
-
 }
 
-.search-page{
+.search-page {
   background-color: #555555;
+  padding-bottom: 8%;
 }
 
-.search-page .search-wallpaper .search{
+.search-page .search-wallpaper .search {
   text-align: center;
   background-color: #2525259a;
   padding: 5%;
   width: 70%;
   margin: 10%;
   justify-self: center;
-  }
-  
-  .search-page .search-wallpaper .search h1 {
-    text-align: center;
-    font-size: 48px;
-    color: #ffffff;
-    font-family: 'Rouge Script', cursive;
-  }
-  
-  .search-page .search-wallpaper .search #srch {
-    margin: 2% 0;
-    justify-self: center;
-    width: 100%;
-    padding: 16px 30px;
-    font-size: 15px;
-    background: #ffffff;
-    border: none;
-  }
-  .search-sec{
-    padding: 2rem;
-  }
-
-.search-slt{
-    display: block;
-    width: 100%;
-    line-height: 1.5;
-    color: #55595c;
-    background-color: #fff;
-    background-image: none;
-    border: 1px solid #ccc;
-    height: calc(3rem + 2px) !important;
-    border-radius:0;
 }
-.wrn-btn{
-    width: 100%;
-    background: #D3A65A;
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: capitalize;
-    height: calc(3rem + 2px) !important;
-    border-radius:0;
+
+.search-page .search-wallpaper .search .g-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 25px 0;
+}
+
+.search-page .search-wallpaper .search h1 {
+  text-align: center;
+  font-size: 48px;
+  color: #ffffff;
+  font-family: "Rouge Script", cursive;
+}
+
+.search-page .search-wallpaper .search #srch {
+  justify-self: center;
+  width: 100%;
+  padding: 0px 30px;
+  font-size: 15px;
+  background: #ffffff;
+  border: none;
+}
+.search-sec {
+  padding: 2rem;
+}
+
+.search-slt {
+  display: block;
+  width: 100%;
+  line-height: 1.5;
+  color: #55595c;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  height: calc(3rem + 2px) !important;
+  border-radius: 0;
+}
+.wrn-btn {
+  width: 100%;
+  background: #9b1010ed;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  height: calc(3rem + 2px) !important;
+  border: none;
 }
 
 /* ro result massage */
 
-.search-page .cards .massage-error{
+.search-page .cards .massage-error {
   color: #fff;
   font-size: 48px;
   /* margin-left: 15%; */
   padding: 5% 15%;
 }
 
+/*  result cards  */
+.search-page .cards {
+  /* margin-b: 2%; */
+  display: grid;
+  row-gap: 5px;
+  padding-bottom: 4%;
+}
 
+.search-page .cards .card {
+  padding: 7px;
+  margin: 0 15%;
+  display: grid;
+  grid-template-columns: 220px auto;
+  background-color: #ffffff;
+  cursor: pointer;
+}
 
-  
-  /*  result cards  */
-  .search-page .cards {
-    /* margin-b: 2%; */
-    display: grid;
-    row-gap: 5px;
-    padding-bottom: 4%;
+.search-page .card h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-  }
-  
-  .search-page .cards .card {
-    padding: 7px;
-    margin: 0 15%;
-    display: grid;
-    grid-template-columns: 220px auto;
-    background-color: #ffffff;
-    cursor: pointer;
+.search-page .card img {
+  width: 200px;
+  height: 155px;
+  border-radius: 15px;
+  margin: auto;
+  display: block;
+}
 
-  }
-  .search-page .card:hover {
-    
-  }
-  
-  .search-page .card h3 {
-    font-size: 20px;
-    font-weight: bold;
-  }
+.search-page .card-text {
+  padding: 15px;
+}
 
-  .search-page .card img{
-    width: 200px;
-    height: 155px;
-    border-radius: 15px;
-    margin: auto;
-    display: block;
-  }
+.search-page .card .two-col p {
+  color: #555555a6;
+  display: inline-block;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
 
-  .search-page .card-text{
-    padding: 15px;
-  }
-
-  .search-page .card .two-col p{
-    color: #555555a6;
-    display: inline-block;
-    width: 300px;
-    white-space: nowrap;
-    overflow: hidden !important;
-    text-overflow: ellipsis;
-  }
-  
-.search-page .card-text .two-col{
+.search-page .card-text .two-col {
   display: flex;
   justify-content: space-between;
 }
 
-.des-over{
+.des-over {
   overflow: hidden;
   /* width:670px; */
   display: -webkit-box;

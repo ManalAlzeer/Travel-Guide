@@ -61,7 +61,7 @@ function Landing() {
             <h1>04</h1>
             <h2>Find Mates</h2>
             <p>Choose your trip and get to know your teammates...</p>
-            <Link to="/Search" className="link">
+            <Link to="/Trips" className="link">
               <span className="icon">
                 <i className="fas fa-chevron-circle-right"></i>
               </span>
@@ -75,7 +75,7 @@ function Landing() {
             <h2 className="coloring">
             Where to next?
             </h2>
-            <button className="btn" onClick={()=>{navigate("/Search");}}>Show More</button>
+            <button className="btn pointer" onClick={()=>{navigate("/Search");}}>Show More</button>
           </div>
 
           <div className="container-group">

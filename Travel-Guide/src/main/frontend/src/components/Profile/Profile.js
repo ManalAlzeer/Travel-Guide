@@ -6,10 +6,9 @@ import { storage } from "../firebase/firebase";
 import { useDispatch } from "react-redux";
 import { updateImage } from "../../reducers/Login/action";
 import { useSelector } from "react-redux";
-import "./Profile.css"
+import "./Profile.css";
 
 function Profile() {
-
   const state = useSelector((state) => {
     return {
       currentUser: state.usersReducer.currentUser,
@@ -20,7 +19,7 @@ function Profile() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [data, setData] = useState();
-  const [type, setType] = useState("Traveler")
+  const [type, setType] = useState("Traveler");
   const { id } = useParams();
 
   useEffect(() => {
@@ -29,7 +28,7 @@ function Profile() {
       .then((res) => {
         console.log(res.data);
         setData(res.data);
-        if(res.data[0].id === 1){
+        if (res.data[0].id === 1) {
           setType("Admin");
         }
       })
@@ -38,14 +37,13 @@ function Profile() {
       });
   }, [id]);
 
-  // image upload 
+  // image upload
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
 
-
   const handleChange = (e) => {
-    setInfo(e.target.value.split('\\').pop());
+    setInfo(e.target.value.split("\\").pop());
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -55,7 +53,7 @@ function Profile() {
     const uploadTask = storage.ref(`profileImages/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
-      (snapshot) =>  {
+      (snapshot) => {
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
@@ -72,16 +70,16 @@ function Profile() {
           .then((url) => {
             setUrl(url);
             axios
-            .put(`http://localhost:8080/Users/image/${data.id}`, {
-              image: "" + url + "",
-            })
-            .then((res) => {
-              const action = updateImage(res.data);
-              dispatch(action);
-            })
-            .catch((err) => {
-              console.log(err);
-            });
+              .put(`http://localhost:8080/Users/image/${data.id}`, {
+                image: "" + url + "",
+              })
+              .then((res) => {
+                const action = updateImage(res.data);
+                dispatch(action);
+              })
+              .catch((err) => {
+                console.log(err);
+              });
           });
       }
     );
@@ -89,99 +87,108 @@ function Profile() {
 
   const [info, setInfo] = useState("");
   return (
-    <div className="profile-des">    
-      <div className="page-header">   
-      </div>
+    <div className="profile-des">
+      <div className="page-header"></div>
       <div className="main-profile">
-        {data !== undefined ? (<>
-        <div className="profile">
-	        <div className="avatar">
-	          <img src={url || data.image || "http://via.placeholder.com/300"} alt="" class="img-raised rounded-circle img-fluid"/>
-	        </div>
-          <div class="name">
-	          <h3 class="title">{data.username}</h3>
-						<p className="first-color">{type}</p> 
-          </div>
+        {data !== undefined ? (
+          <>
+            <div className="profile">
+              <div className="avatar">
+                <img
+                  src={url || data.image || "http://via.placeholder.com/300"}
+                  alt=""
+                  class="img-raised rounded-circle img-fluid"
+                />
+              </div>
+              <div class="name">
+                <h3 class="title">{data.username}</h3>
+                <p className="first-color">{type}</p>
+              </div>
 
-          {state.isLoggedIn && data.id === state.currentUser.id &&(
-          <div className="upload">
-          <div className="two-div">
-            <label for="file-upload" class="custom-file-upload">
-              <i class="fa fa-upload"></i></label>
-              <input id="file-upload" type="file" onChange={handleChange}/>
-              <progress className="j-self" style={{margin: '10px'}} value={progress} max="100" />
-          </div>
-          <p style={{fontSize:'12px'}}>{info}</p>
-          <button onClick={handleUpload} className="upload-btn">Upload</button>
-	        </div>)}
-
-	      </div>
-        <div className="card-block">
-          <h6 className="m-b-20 p-b-5 b-b-default f-w-600">
-          <div className="b-size">Personal Information</div>
-          </h6>
-          <div className="row">
-                      <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Name:</p>
-                        <h6 className="text-muted f-w-400">
-                        {data.username}
-                        </h6>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Phone Number:</p>
-                        <div className="text-muted f-w-400">
-                        {data.phoneNumber}
-                        </div>
-                      </div>
-          </div>
-          <div className="row">
-                  <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Age:</p>
-                        <h6 className="text-muted f-w-400">
-                        {data.age}
-                        </h6>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Email:</p>
-                        <h6 className="text-muted f-w-400">
-                        {data.email}
-                        </h6>
-                      </div>
-                      <div className="col-sm-6">
-                        <p className="m-b-10 f-w-600">Gender:</p>
-                        <h6 className="text-muted f-w-400">
-                        {data.gender}
-                        </h6>
-                      </div>
-          </div>
-        </div>
-        </>) : ( "wait"
+              {state.isLoggedIn && data.id === state.currentUser.id && (
+                <div className="upload">
+                  <div className="two-div">
+                    <label for="file-upload" class="custom-file-upload">
+                      <i class="fa fa-upload"></i>
+                    </label>
+                    <input
+                      id="file-upload"
+                      type="file"
+                      onChange={handleChange}
+                    />
+                    <progress
+                      className="j-self"
+                      style={{ margin: "10px" }}
+                      value={progress}
+                      max="100"
+                    />
+                  </div>
+                  <p style={{ fontSize: "12px" }}>{info}</p>
+                  <button onClick={handleUpload} className="upload-btn">
+                    Upload
+                  </button>
+                </div>
+              )}
+            </div>
+            <div className="card-block">
+              <h6 className="m-b-20 p-b-5 b-b-default ">
+                <div className="b-size">Personal Information</div>
+              </h6>
+              <div className="row-grid">
+                <div>
+                  <p>Name:</p>
+                  <h6 className="text-muted">{data.username}</h6>
+                </div>
+                <div>
+                  <p>Phone Number:</p>
+                  <h6 className="text-muted">{data.phoneNumber}</h6>
+                </div>
+                <div>
+                  <p>Age:</p>
+                  <h6 className="text-muted">{data.age}</h6>
+                </div>
+                <div>
+                  <p>Email:</p>
+                  <h6 className="text-muted">{data.email}</h6>
+                </div>
+                <div>
+                  <p>Gender:</p>
+                  <h6 className="text-muted">{data.gender}</h6>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          "wait"
         )}
 
-      <div className="trips-card">
-          <h6 className="m-b-20 p-b-5 b-b-default f-w-600">
-          <div className="b-size">Trips Information</div>
+        <div className="trips-card">
+          <h6 className="m-b-20 p-b-5 b-b-default ">
+            <div className="b-size">Trips Information</div>
           </h6>
           <div className="card-body">
-          {data !== undefined
-            ? data.trips.map((e, i) => {
-                return (
-                  <div className="tp-card" key={i} onClick={() => { navigate(`/PlaceDetails/${e.id}`); }}>
-                     <div className="plaace-card">
-                      {e.places.map((el, i) => {
-                        return <p key={i}>{el.name}</p>;
-                      })}
+            {data !== undefined
+              ? data.trips.map((e, i) => {
+                  return (
+                    <div
+                      className="tp-card"
+                      key={i}>
+                      <div className="plaace-card">
+                        {e.places.map((el, i) => {
+                          return <p key={i} onClick={() => {
+                            navigate(`/PlaceDetails/${el.id}`);
+                          }}>{el.name}</p>;
+                        })}
+                      </div>
+                      {/* <p>TripID: {e.id}</p> */}
+                      <p>From: {e.departure_date}</p>
+                      <p>To: {e.return_date}</p>
                     </div>
-                    {/* <p>TripID: {e.id}</p> */}
-                    <p>From: {e.departure_date}</p>
-                    <p>To: {e.return_date}</p>
-                  </div>
-                );
-              })
-            : ""}
+                  );
+                })
+              : ""}
           </div>
-      </div>
-        
+        </div>
       </div>
     </div>
   );

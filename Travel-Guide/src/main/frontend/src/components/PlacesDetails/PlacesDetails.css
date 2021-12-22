@@ -51,12 +51,15 @@
 .blog_cont p {
     text-align: justify;
     text-justify: inter-word;
+    padding: 5px 0;
+    font-size: 14px;
 }
 
 .marker{
     color: rgb(112, 0, 0);
     font-size: larger;
     margin-bottom: 2px;
+    padding-right: 7px;
 }
 
 /* tags ref: https://www.designlabthemes.com/css-tags-how-to-style-post-tags/*/
@@ -151,6 +154,15 @@
 .comment-body{
     display: grid;
     grid-template-columns: 80px auto;
+    padding-bottom: 15px;
+}
+
+.comment-body .contact_text p{
+    font-size: 14px;
+}
+
+.comment-body .contact_text h4:hover{
+    color: #d3a65a;
 }
 
 .re-pic{
@@ -160,11 +172,11 @@
     display: block;
     border-radius: 50%;
     margin: 0 auto;
-    -webkit-transform: translate3d(0, 20%, 0);
-    -moz-transform: translate3d(0, 20%, 0);
-    -o-transform: translate3d(0, 20%, 0);
-    -ms-transform: translate3d(0, 20%, 0);
-    transform: translate3d(0, 20%, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
 }
 
 .reviews-card{

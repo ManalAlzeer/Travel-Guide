@@ -41,7 +41,7 @@
     top: 0;
     left: 0;
     overflow: hidden;
-    background-color: #2D2422;
+    background: linear-gradient( #00000042 10%, #e1e1e100 99% );
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
@@ -63,7 +63,7 @@
   }
   
   .header a {
-    color: rgb(255, 255, 255);
+    color: #fff;
     float: left;
     padding: 12px;
     text-decoration: none;

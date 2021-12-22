@@ -48,10 +48,6 @@ const ratingChange = (e) => {
   };
 
 const setReview = () => {
-    // console.log("palse:" ,data.id);
-    // console.log("rating" ,rt);
-    // console.log("comment" ,cmt);
-    // console.log("user" ,state.currentUser.id , " and name:" ,state.currentUser.username);
     axios.post("http://localhost:8080/Places/addReview", {
         id : data.id,
         reviews :[{
@@ -114,7 +110,7 @@ const setReview = () => {
           <div class="comment-body">
               <img onClick={() => { navigate(`/Profile/${e.user.id}`);}} src={e.user.image}
               className="re-pic pointer" alt={e.user.username} />
-              <div class="full contact_text">
+              <div class="contact_text">
                 <h4 className="pointer" onClick={() => { navigate(`/Profile/${e.user.id}`);}}>{e.user.username}</h4>
                 <p>{e.comment}</p>
                 {[...Array(e.rating)].map((_, i) => {return(
@@ -142,16 +138,6 @@ const setReview = () => {
                 <label for="rating4" class="fa fa-star"></label>
                 <input type="radio" name="rating" id="rating5" value="5" onChange={ratingChange} />
                 <label for="rating5" class="fa fa-star"></label>
-                {/* <input type="radio" name="rating" id="rating6" />
-                <label for="rating6" class="fa fa-star"></label>
-                <input type="radio" name="rating" id="rating7" />
-                <label for="rating7" class="fa fa-star"></label>
-                <input type="radio" name="rating" id="rating8" />
-                <label for="rating8" class="fa fa-star"></label>
-                <input type="radio" name="rating" id="rating9" />
-                <label for="rating9" class="fa fa-star"></label>
-                <input type="radio" name="rating" id="rating10" />
-                <label for="rating10" class="fa fa-star"></label> */}
               </div>
             </div>
             <button className="submit" onClick={() => {setReview();}}>Send</button>
