@@ -9,11 +9,13 @@ import PlaceDetails from "./components/PlacesDetails/PlaceDetails";
 import CityDetails from "./components/CityDetails/CityDetails";
 import AdminPage from "./components/Admin/AdminPage";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
   return (
     <BrowserRouter>
+    <ScrollToTop>
     <Navbar/>
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -26,6 +28,7 @@ function App() {
         <Route path="/AdminPage/:id" element={<AdminPage/>}/>
       </Routes>
       <Footer/>
+      </ScrollToTop>
     </BrowserRouter>
   );
 }

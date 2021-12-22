@@ -158,7 +158,7 @@ function SignUp() {
               <div className="two-input">
                 <input
                   className="inputs"
-                  type="email"
+                  type="text"
                   name="PhoneNumber"
                   placeholder="phoneNumber"
                   required=""
@@ -166,7 +166,7 @@ function SignUp() {
                 />
                 <input
                   className="inputs"
-                  type="password"
+                  type="text"
                   name="age"
                   placeholder="Age"
                   required=""

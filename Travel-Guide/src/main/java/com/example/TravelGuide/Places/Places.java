@@ -18,6 +18,7 @@ public class Places {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private String Name;
+    @Column(length = 10000)
     private String Description;
     private String Image;
     private String Location;

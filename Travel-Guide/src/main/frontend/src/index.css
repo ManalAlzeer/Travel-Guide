@@ -49,3 +49,19 @@ body{
 .img-effict{
   filter: grayscale(60%);
 }
+
+.pointer{
+  cursor: pointer;
+}
+
+.first-color{
+  color: #d3a65a;
+}
+
+.sec-color{
+  color: #2D2422;
+}
+
+.third-color{
+  color: #9b1e1eed;
+}

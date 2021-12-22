@@ -2,12 +2,13 @@
 .city-detail{
     padding-bottom: 5%;
     justify-content: center;
+    background-color: #eeeeee;
 }
 
 .city-detail .tow-divs{
     display: grid;
     grid-template-columns: 700px auto;
-    padding: 5%;
+    padding: 5% 5% 0 5%;
 }
 
 .city-detail .tow-divs div.relative {
@@ -23,14 +24,89 @@
     top: 20px;
     left: 100px;
     width: 500px;
-    height: 200px;
   }
 
-  .city-detail .tow-divs .place-info{
+  .city-detail .tow-divs .city-info{
       padding: 25% 10%;
+      color: rgb(32, 32, 32);;
   }
 
-  .city-detail .tow-divs .place-info h2{
+  .city-detail .tow-divs .city-info h2{
     text-transform: uppercase;
     font-weight: bolder;
+    color: #d3a65a;
   }
+
+  .city-detail .tow-divs .city-info .sh-font{
+    color: rgba(53, 53, 53, 0.459)
+  }
+
+
+
+  .city-detail .grid-places{
+  padding: 5%;
+  }
+
+  .font-fi{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .city-detail .grid-places .title{
+    text-transform: uppercase;
+    color: #443931;
+    border-bottom: 1px solid #5e5e5e2c;
+    margin: 0 8%;
+    padding-left: 3%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  }
+
+  .city-detail .grid-places img{
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: auto;  
+  }
+
+  .city-detail .grid-places .p-card{
+    display: grid;
+    grid-template-columns: 500px auto;
+    padding: 3% 5%;
+    border-bottom: 1px solid #5e5e5e2c;
+
+  }
+
+.city-detail .grid-places .p-card .card_cont{
+  padding: 15px;
+}
+
+
+.grid-places .p-card .card_cont .font-fi{
+  overflow: hidden;
+  width:500px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+
+
+.card_cont h3{
+color: #b98e43;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 29px;
+padding: 0;
+;}
+
+  .padding-0{
+    padding-right:0;
+    padding-left:0;
+}
+
+.moreBtn{
+  margin-top: 15px;
+  padding: 5px 20px;
+  border: none;
+  background-color: #d3a65a;
+  color: #fff;
+}

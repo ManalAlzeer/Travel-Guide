@@ -1,0 +1,224 @@
+
+.place-detail{
+    padding-bottom: 5%;
+    padding-top: 3%;
+    justify-content: center;
+    background-color: #eeeeee;
+}
+
+.place-detail .g-info{
+    padding: 5%;
+}
+
+.place-detail .g-info div.background {
+    height: 400px;
+    background: #d3a65a;
+    margin: 0 11% 5%;
+  } 
+  
+  .place-detail .g-info div.card {
+    text-align:center;
+    padding-top:15px;
+    margin: 0 10%;
+  }
+
+  .place-detail .g-info div.card img{
+      max-width: 200px;
+      width: 100%;
+      margin: 0 auto;
+      -webkit-transform: translate3d(0, -50%, 0);
+      -moz-transform: translate3d(0, -50%, 0);
+      -o-transform: translate3d(0, -50%, 0);
+      -ms-transform: translate3d(0, -50%, 0);
+      transform: translate3d(0, -50%, 0);
+  }
+
+.blog_cont {
+    padding: 40px;
+    box-shadow: 0 0px 45px -31px #000;
+    margin-bottom: 0;
+    background: #fff;
+    display: grid;
+    grid-template-rows: 100px auto auto auto;
+} 
+
+.blog_cont .sublittle{
+    padding: 3% 0;
+    text-align: left;
+    color: rgba(61, 61, 61, 0.568);
+}
+
+.blog_cont p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.marker{
+    color: rgb(112, 0, 0);
+    font-size: larger;
+    margin-bottom: 2px;
+}
+
+/* tags ref: https://www.designlabthemes.com/css-tags-how-to-style-post-tags/*/
+
+.tags a {
+	display: inline-block;
+	height:24px;
+	line-height:23px;
+	position:relative;
+	margin: 0 12px 8px 0;
+	padding: 0 12px 0 10px;
+	background: #777;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	border-top-left-radius: 5px;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	color: #fff;
+	font-size:12px;
+	font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+	text-decoration: none;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	font-weight: bold;
+	}
+	
+.tags a:before {
+	content: "";
+	position: absolute;
+	top: 10px;
+	right: 1px;
+	float: left;
+	width: 5px;
+	height: 5px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	background: #fff;
+	-moz-box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+	-webkit-box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+	box-shadow: -1px -1px 2px rgba(0,0,0,0.4);
+	}
+	
+.tags a:after {
+	content: "";
+	position: absolute;
+	top:0;
+	right: -12px;
+	width: 0;
+	height: 0;
+	border-color: transparent transparent transparent #777;
+	border-style: solid;
+	border-width: 12px 0 12px 12px;
+	}
+	
+.tags a.color {background: #9b1010ed;}
+.tags a.color:after {border-color: transparent transparent transparent #9b1010ed}
+
+.small a {
+	height: 21px;
+	line-height: 21px;
+	float: none;
+	font-size: 11px;
+	}
+	
+.small a:before {
+    right: 0;
+    top: 8px;
+    border-width: 10px 0 10px 10px;
+	}
+	
+.small a:after {
+	right: -11px;
+	top: 0;
+	border-width: 11px 0 11px 11px;
+	}
+
+.comment{
+    padding: 10% 15%;
+}
+
+.comment .heading{
+        text-transform: uppercase;
+        color: #9b1e1eed;
+        border-bottom: 1px solid #5e5e5e2c;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding: 0 15px;
+        font-size: 29px;
+}
+
+.comment-body{
+    display: grid;
+    grid-template-columns: 80px auto;
+}
+
+.re-pic{
+    width: 50px;
+    height: 46px;
+    box-shadow: 0 5px 15px -8px rgb(0 0 0 / 24%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+    display: block;
+    border-radius: 50%;
+    margin: 0 auto;
+    -webkit-transform: translate3d(0, 20%, 0);
+    -moz-transform: translate3d(0, 20%, 0);
+    -o-transform: translate3d(0, 20%, 0);
+    -ms-transform: translate3d(0, 20%, 0);
+    transform: translate3d(0, 20%, 0);
+}
+
+.reviews-card{
+    padding: 40px;
+    box-shadow: 0 0px 45px -31px #000;
+    margin-bottom: 0;
+    background: #fff;
+}
+
+.comment-inputs{
+    padding: 10px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+
+.comment-inputs .rating{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 70px auto;
+}
+
+.comment-inputs textarea{
+    border-radius: 10px;
+    padding: 5px;
+    height: 100px;
+}
+
+/* starts - rating */
+
+.rating-css{
+    color: #ffe400;
+  }
+  .rating-css input {
+    display: none;
+  }
+  .rating-css input + label {
+    text-shadow: 1px 1px 0 #ffe400;
+    cursor: pointer;
+  }
+  .rating-css input:checked + label ~ label {
+    color: #838383;
+  }
+  
+.comment-inputs .submit{
+    justify-self: center;
+    padding: 5px 20px;
+    width: 130px;
+    background: #9b1010ed;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+}
+
+.comment-inputs .submit:hover{
+    background: #9b1e1eed;
+}

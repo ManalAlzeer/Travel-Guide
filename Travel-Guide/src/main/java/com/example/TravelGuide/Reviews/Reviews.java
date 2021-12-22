@@ -13,6 +13,7 @@ public class Reviews {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int Id;
     private int rating;
+    @Column(length = 10000)
     private String comment;
 
 //    @ManyToOne(fetch = FetchType.EAGER, optional = true)

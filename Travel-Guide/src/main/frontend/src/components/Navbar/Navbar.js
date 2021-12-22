@@ -30,9 +30,9 @@ function Navbar() {
       />
       <div className="header">
       <div className="logo">
-            <a href onClick={()=>{navigate("/");}}><span className="coloring">TRAVEL </span> Website</a>
+            <a href="" onClick={()=>{navigate("/");}}><span className="coloring">TRAVEL </span> Website</a>
       </div>
-      <nav class="navMenu">
+      <nav className="navMenu">
       <Link to="/" className="link">
         <span className="icon"><i className="fa fa-home"></i></span>
       </Link>

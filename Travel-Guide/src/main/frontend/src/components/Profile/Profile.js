@@ -5,9 +5,17 @@ import { useParams } from "react-router";
 import { storage } from "../firebase/firebase";
 import { useDispatch } from "react-redux";
 import { updateImage } from "../../reducers/Login/action";
+import { useSelector } from "react-redux";
 import "./Profile.css"
 
 function Profile() {
+
+  const state = useSelector((state) => {
+    return {
+      currentUser: state.usersReducer.currentUser,
+      isLoggedIn: state.usersReducer.isLoggedIn,
+    };
+  });
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -33,8 +41,11 @@ function Profile() {
   // image upload 
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
+  const [progress, setProgress] = useState(0);
+
 
   const handleChange = (e) => {
+    setInfo(e.target.value.split('\\').pop());
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -44,7 +55,12 @@ function Profile() {
     const uploadTask = storage.ref(`profileImages/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
-      (snapshot) => {},
+      (snapshot) =>  {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
       (error) => {
         console.log(error);
       },
@@ -71,6 +87,7 @@ function Profile() {
     );
   };
 
+  const [info, setInfo] = useState("");
   return (
     <div className="profile-des">    
       <div className="page-header">   
@@ -83,12 +100,21 @@ function Profile() {
 	        </div>
           <div class="name">
 	          <h3 class="title">{data.username}</h3>
-						<p>{type}</p> 
+						<p className="first-color">{type}</p> 
           </div>
+
+          {state.isLoggedIn && data.id === state.currentUser.id &&(
           <div className="upload">
-            <input type="file" onChange={handleChange} />
-            <button onClick={handleUpload}>Upload</button>
-	        </div>
+          <div className="two-div">
+            <label for="file-upload" class="custom-file-upload">
+              <i class="fa fa-upload"></i></label>
+              <input id="file-upload" type="file" onChange={handleChange}/>
+              <progress className="j-self" style={{margin: '10px'}} value={progress} max="100" />
+          </div>
+          <p style={{fontSize:'12px'}}>{info}</p>
+          <button onClick={handleUpload} className="upload-btn">Upload</button>
+	        </div>)}
+
 	      </div>
         <div className="card-block">
           <h6 className="m-b-20 p-b-5 b-b-default f-w-600">
