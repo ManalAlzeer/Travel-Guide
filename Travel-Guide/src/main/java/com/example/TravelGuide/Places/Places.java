@@ -29,6 +29,7 @@ public class Places {
     private Cities city;
 
     @ManyToMany
+    @JsonIgnoreProperties("places")
     private List<Tags> tag = new ArrayList<>();
 
     @JsonIgnoreProperties("places")

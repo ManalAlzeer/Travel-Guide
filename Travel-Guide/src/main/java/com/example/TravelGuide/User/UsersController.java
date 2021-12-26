@@ -20,7 +20,7 @@ public class UsersController {
 
     @GetMapping
     public List<Users> getUsers(){
-        return usersService.getAll();
+        return usersService.getUsers();
     }
 
     @GetMapping("/{id}")
@@ -30,7 +30,7 @@ public class UsersController {
 
     @PostMapping
     public Users createUser(@RequestBody Users user){
-        return usersService.addUser(user);
+        return usersService.createUser(user);
     }
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable String id){
@@ -41,6 +41,11 @@ public class UsersController {
         usersService.addUsers(users);
         return getUsers();
     }
+    @PutMapping("/{id}")
+    public void updateUser(@PathVariable String id){
+        usersService.updateUser(id);
+    }
+
 
 
     @PutMapping("/image/{id}")

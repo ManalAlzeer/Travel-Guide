@@ -14,14 +14,15 @@ import java.util.List;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Id;
-    private String Username;
-    private String Password;
-    private String Image;
-    private int Age;
-    private String PhoneNumber;
-    private String Email;
-    private String Gender;
+    private int id;
+    private String username;
+    private String password;
+    private String image;
+    private int age;
+    private String phoneNumber;
+    private String email;
+    private String gender;
+    private String role;
 
 
     @JsonIgnoreProperties("users")
@@ -31,15 +32,24 @@ public class Users {
     public Users() {
     }
 
-    public Users(int id, String username, String password, String image, int age, String phoneNumber, String email, String gender) {
-        Id = id;
-        Username = username;
-        Password = password;
-        Image = image;
-        Age = age;
-        PhoneNumber = phoneNumber;
-        Email = email;
-        Gender = gender;
+    public Users(int id, String username, String password, String image, int age, String phoneNumber, String email, String gender, String role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.image = image;
+        this.age = age;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.gender = gender;
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public List<Trips> getTrips() {
@@ -51,67 +61,66 @@ public class Users {
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getImage() {
-        return Image;
+        return image;
     }
 
     public void setImage(String image) {
-        Image = image;
+        this.image = image;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
     public String getPhoneNumber() {
-        return PhoneNumber;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
     }
-
 }

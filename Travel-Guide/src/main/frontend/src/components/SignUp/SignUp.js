@@ -1,9 +1,11 @@
-import { login, UserType } from "../../reducers/Login/action";
+import { login, UserType, seToken } from "../../reducers/Login/action";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState ,useEffect } from "react";
 import axios from "axios";
 import "./SignUp.css"
+import jwt_decode from "jwt-decode";
+
 
 function SignUp() {
   const [msg, setmsg] = useState("");
@@ -15,6 +17,19 @@ function SignUp() {
   const [users, setUsers] = useState();
 
   // signUp form
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/Users")
+      .then((res) => {
+        console.log(res.data);
+        setUsers(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
 
   const [Username, setUsername] = useState();
   const [phoneNumber, setPhoneNumber] = useState();
@@ -62,45 +77,39 @@ function SignUp() {
     setPassword(e.target.value);
   };
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/Users")
-      .then((res) => {
-        console.log(res.data);
-        setUsers(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
   const getUser = () => {
     const theuser = {
-      email: userinfo,
+      username: userinfo,
       password: password,
     };
+    axios
+    .post("http://localhost:8080/login", {
+      username: theuser.username,
+      password: theuser.password 
+    })
+    .then((res) => {
+      console.log(res.data.access_token);
+      const token = res.data.access_token;
+      const decoded = jwt_decode(token);
 
-    users.forEach((e) => {
-      if (e.email === theuser.email && e.password === theuser.password) {
-        if (e.id === 1) {
-          console.log("Hi Admin ;)");
-          const action = login(e);
-          const action2 = UserType("Admin");
-          dispatch(action);
-          dispatch(action2);
-          navigate("/AdminPage");
-        } else {
-          console.log("Hi Travel ;)");
-          const action = login(e);
-          const action2 = UserType("Travel");
-          dispatch(action);
-          dispatch(action2);
-          navigate("/");
-        }
-      } else {
-        setmsg("Email or Password is not correct !");
-      }
+      console.log("token: ",token);
+      console.log(decoded.roles[0]);
+
+      const action = seToken(token)
+      const action2 = login(decoded)
+      const action3 = UserType(decoded.roles[0]);
+      dispatch(action);
+      dispatch(action2);
+      dispatch(action3)
+
+      navigate("/");
+
+    })
+    .catch((err) => {
+      console.log(err);
+      setmsg("You don't have account, please SignUp")
     });
+    
   };
 
   const setUser = () => {
@@ -123,6 +132,7 @@ function SignUp() {
             phoneNumber: "" + phoneNumber + "",
             email: "" + Email + "",
             gender: "" + gender + "",
+            role:"Traveler"
           })
           .then((res) => {
             console.log(res.data);
@@ -231,10 +241,10 @@ function SignUp() {
               </label>
               <input
                 className="inputs"
-                type="email"
-                name="email"
+                type="text"
+                name="text"
                 onChange={usernameValue}
-                placeholder="Email"
+                placeholder="Username"
                 required=""
               />
               <input

@@ -5,23 +5,20 @@ export const login = (user) => {
     payload: user,
   };
 };
-
-export const updateImage = (user) =>{
-  // user: is an array of objects
+export const seToken = (token) => {
+  // token: is string
   return {
-    type: "UPDATE_IMAGE",
-    payload: user,
+    type: "SET_TOKEN",
+    payload: token,
   };
-}
-
+};
 export const UserType = (type) => {
-  // user: is an String 
+  // user: is an String
   return {
     type: "SET_TYPE",
     payload: type,
   };
 };
-
 export const logout = (user) => {
   // user: is an array of objects
   return {

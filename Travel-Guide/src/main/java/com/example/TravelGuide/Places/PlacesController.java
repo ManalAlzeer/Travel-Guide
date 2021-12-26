@@ -52,6 +52,11 @@ public class PlacesController {
         return placesService.addReview(places);
     }
 
+    @GetMapping ("/getPlaces/{place_id}/ByTags/{tag_name}")
+    public List<Places> getPlacesByTags(@PathVariable String place_id, @PathVariable String tag_name){
+        return placesService.getPlacesByTags(place_id,tag_name);
+    }
+
     //    int TripId, int UserId
 //    @PutMapping("/{placeId}/trips/{tripId}")
 //    public Places addTripToPlace(@RequestBody @PathVariable int placeId, @PathVariable int tripId) {

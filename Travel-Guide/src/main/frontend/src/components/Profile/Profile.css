@@ -55,7 +55,7 @@
 }
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 200px;
 }
 /* end image in avatar */
 .profile-des .main-profile .profile .name {
@@ -173,10 +173,10 @@ justify-content: center;
 
 /* upload  */
 
-input[type="file"] {
+.upload .two-div input[type="file"] {
   display: none;
 }
-.custom-file-upload {
+.upload .two-div .custom-file-upload {
   padding: 5px 8px;
   color: #9b1010ed;
   border: none;

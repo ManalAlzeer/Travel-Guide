@@ -1,7 +1,8 @@
 const initialState = {
   currentUser: {},
   isLoggedIn: false,
-  UserType:"",
+  UserType: "",
+  token: undefined,
 };
 
 const usersReducer = (state = initialState, { type, payload }) => {
@@ -10,23 +11,28 @@ const usersReducer = (state = initialState, { type, payload }) => {
       return {
         currentUser: payload,
         isLoggedIn: true,
+        token: state.token,
       };
     case "SET_TYPE":
       return {
         currentUser: state.currentUser,
-        isLoggedIn: true,
+        isLoggedIn: state.isLoggedIn,
         UserType: payload,
+        token: state.token,
+      };
+    case "SET_TOKEN":
+      return {
+        currentUser: state.currentUser,
+        isLoggedIn: state.isLoggedIn,
+        token: payload,
       };
     case "LOG_OUT":
       return {
         currentUser: {},
         isLoggedIn: false,
+        token: undefined,
+        UserType: "",
       };
-    case "UPDATE_IMAGE":
-      return {
-        currentUser: payload,
-        isLoggedIn: true,
-      }
     default:
       return state;
   }

@@ -49,7 +49,7 @@ function Navbar() {
                   <i className="fa fa-address-card"></i>
                 </span>
       </Link></i>)}
-      {state.UserType === "Admin" && (<i onClick={()=>{navigate(`/AdminPage/${state.currentUser.id}`);}}><Link to="/AdminPage" className="link">
+      {state.UserType === "Admin" && (<i onClick={()=>{navigate(`/AdminPage`);}}><Link to="/AdminPage" className="link">
                 <span className="icon">
                   <i className="fa fa-user"></i>
                 </span>

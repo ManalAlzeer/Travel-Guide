@@ -24,6 +24,8 @@
 
   .place-detail .g-info div.card img{
       max-width: 200px;
+      max-height: 190px;
+      height: 150px;
       width: 100%;
       margin: 0 auto;
       -webkit-transform: translate3d(0, -50%, 0);
@@ -34,7 +36,7 @@
   }
 
 .blog_cont {
-    padding: 40px;
+    padding: 60px;
     box-shadow: 0 0px 45px -31px #000;
     margin-bottom: 0;
     background: #fff;
@@ -116,7 +118,7 @@
 	border-width: 12px 0 12px 12px;
 	}
 	
-.tags a.color {background: #9b1010ed;}
+.tags a.color {background: #9b1e1eed;}
 .tags a.color:after {border-color: transparent transparent transparent #9b1010ed}
 
 .small a {

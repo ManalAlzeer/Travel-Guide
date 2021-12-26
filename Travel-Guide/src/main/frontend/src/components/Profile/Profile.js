@@ -3,8 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
 import { storage } from "../firebase/firebase";
-import { useDispatch } from "react-redux";
-import { updateImage } from "../../reducers/Login/action";
 import { useSelector } from "react-redux";
 import "./Profile.css";
 
@@ -13,29 +11,40 @@ function Profile() {
     return {
       currentUser: state.usersReducer.currentUser,
       isLoggedIn: state.usersReducer.isLoggedIn,
+      token: state.usersReducer.token,
     };
   });
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [data, setData] = useState();
   const [type, setType] = useState("Traveler");
   const { id } = useParams();
 
+  const config = {
+    headers: {Authorization : `Bearer ${state.token}`},
+  };
+
   useEffect(() => {
+    getInfo();
+    console.log("CurrentUser: ",state.currentUser);
+    console.log("UserToken: ", state.token);
+    console.log("IsLogIn: ", state.isLoggedIn);
+  }, []);
+
+  const getInfo = () =>{
     axios
-      .get(`http://localhost:8080/Users/${id}`)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-        if (res.data[0].id === 1) {
-          setType("Admin");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [id]);
+    .get(`http://localhost:8080/Users/${id}`)
+    .then((res) => {
+      console.log(res.data);
+      setData(res.data);
+      if (res.data.id === 1) {
+        setType("Admin");
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
   // image upload
   const [image, setImage] = useState(null);
@@ -43,7 +52,7 @@ function Profile() {
   const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
-    setInfo(e.target.value.split("\\").pop());
+    setPicInfo(e.target.value.split("\\").pop());
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -72,10 +81,9 @@ function Profile() {
             axios
               .put(`http://localhost:8080/Users/image/${data.id}`, {
                 image: "" + url + "",
-              })
+              },config)
               .then((res) => {
-                const action = updateImage(res.data);
-                dispatch(action);
+                getInfo();
               })
               .catch((err) => {
                 console.log(err);
@@ -85,7 +93,7 @@ function Profile() {
     );
   };
 
-  const [info, setInfo] = useState("");
+  const [PicInfo, setPicInfo] = useState("");
   return (
     <div className="profile-des">
       <div className="page-header"></div>
@@ -97,19 +105,18 @@ function Profile() {
                 <img
                   src={url || data.image || "http://via.placeholder.com/300"}
                   alt=""
-                  class="img-raised rounded-circle img-fluid"
+                  className="img-raised rounded-circle img-fluid"
                 />
               </div>
-              <div class="name">
-                <h3 class="title">{data.username}</h3>
+              <div className="name">
+                <h3 className="title">{data.username}</h3>
                 <p className="first-color">{type}</p>
               </div>
-
-              {state.isLoggedIn && data.id === state.currentUser.id && (
+              {state.isLoggedIn && data.id == state.currentUser.id && (
                 <div className="upload">
                   <div className="two-div">
-                    <label for="file-upload" class="custom-file-upload">
-                      <i class="fa fa-upload"></i>
+                    <label for="file-upload" className="custom-file-upload">
+                      <i className="fa fa-upload"></i>
                     </label>
                     <input
                       id="file-upload"
@@ -123,7 +130,7 @@ function Profile() {
                       max="100"
                     />
                   </div>
-                  <p style={{ fontSize: "12px" }}>{info}</p>
+                  <p style={{ fontSize: "12px" }}>{PicInfo}</p>
                   <button onClick={handleUpload} className="upload-btn">
                     Upload
                   </button>

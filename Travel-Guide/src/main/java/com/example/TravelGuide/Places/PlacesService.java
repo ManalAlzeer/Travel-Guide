@@ -57,6 +57,11 @@ public class PlacesService {
         return p;
     }
 
+    public List<Places> getPlacesByTags(String place_id, String tag_name) {
+        Integer id = Integer.parseInt(place_id);
+        return placesRepository.findPlacesByTag(id,tag_name);
+    }
+
 //    public Places addTripToPlace(int placeId, int tripId) {
 //        Places Place = placesRepository.findById(placeId).get();
 //        Trips Trip = tripsRepository.findById(tripId).get();

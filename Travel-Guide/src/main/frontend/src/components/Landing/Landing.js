@@ -12,19 +12,21 @@ function Landing() {
         return {
           currentUser: state.usersReducer.currentUser,
           UserType: state.usersReducer.UserType,
+          token: state.usersReducer.token,
+
         };
       });
   const navigate = useNavigate();
   return (
     <>
-      {console.log(state.currentUser)}
-      {console.log("State: ")}
-      {console.log(state.UserType)}
+      {console.log("CurrntUser: ",state.currentUser)}
+      {console.log("State: ",state.UserType)}
+      {console.log("Token is: ", state.token)}
       <Header />
 
       <div className="Landing">
         <div className="gaid">
-          <div className="gaidCard" style={{ background: "#606062" }}>
+          <div className="gaidCard" style={{ background: "#A8A8A8" }}>
             <h1>01</h1>
             <h2>Join Us</h2>
             <p>To find more features, don't forget Create Account..</p>
@@ -47,7 +49,7 @@ function Landing() {
               </span>
             </Link>
           </div>
-          <div className="gaidCard" style={{ background: "#D3A65A" }}>
+          <div className="gaidCard" style={{ background: "#9B1E1E" }}>
             <h1>03</h1>
             <h2>Choose Places</h2>
             <p>Find the most exciting places in these cities..</p>
@@ -57,7 +59,7 @@ function Landing() {
               </span>
             </Link>
           </div>
-          <div className="gaidCard" style={{ background: "#EACE9E" }}>
+          <div className="gaidCard" style={{ background: "#D3A65A" }}>
             <h1>04</h1>
             <h2>Find Mates</h2>
             <p>Choose your trip and get to know your teammates...</p>

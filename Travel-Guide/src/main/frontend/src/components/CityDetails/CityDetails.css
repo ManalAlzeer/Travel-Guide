@@ -50,16 +50,26 @@
   font-size: 14px;
 }
 
-.city-detail .grid-places .title {
-  text-transform: uppercase;
-  color: #443931;
+.city-detail .grid-places .places-srch{
+  display: grid;
+  grid-template-columns: auto auto;
   border-bottom: 1px solid #5e5e5e2c;
   margin: 0 8%;
+}
+
+.city-detail .grid-places .places-srch .srch{
+  justify-self: end;
+}
+
+
+.city-detail .grid-places .places-srch .title {
+  text-transform: uppercase;
+  color: #9b1e1eed;
   padding-left: 3%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.city-detail .grid-places img {
+.city-detail .grid-places .p-card img {
   width: 400px;
   height: 300px;
   display: block;
@@ -101,5 +111,80 @@
   padding: 5px 20px;
   border: none;
   background-color: #d3a65a;
+  color: #fff;
+}
+
+/* places result */
+
+.grid-places .s-grid{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 3% 5%;
+}
+
+.grid-places .s-grid .sup{
+  display: grid;
+  grid-template-columns: 220px auto;
+  padding: 3% 5%;
+  margin: 0 8%;
+  border-bottom: 1px solid #5e5e5e2c;
+}
+
+.grid-places .s-grid .sup img{
+  width: 200px;
+  height: 130px;
+  display: block;
+  margin: auto;
+}
+
+.grid-places .s-grid .scd{
+  padding: 20px;
+}
+
+.grid-places .s-grid .sup p{
+  font-size: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  width: 180px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+
+/* radio */
+
+.cntr {
+  width: 100%;
+  text-align: center;
+}
+.cntr .hidden {
+  display: none;
+}
+.cntr .radio {
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 15px;
+}
+.cntr .radio .label {
+  padding: 5px 10px;
+  display: block;
+  float: right;
+  margin-right: 10px;
+  background: #e2e2e2;
+  -webkit-tap-highlight-color: transparent;
+}
+.cntr .radio .label:after {
+  content: '';
+  border-radius: 100%;
+  background: #9b1e1eed;
+  color: #fff;
+  pointer-events: none;
+}
+.cntr.radio:hover .label:after {
+  transform: scale(3.6);
+}
+.cntr input[type="radio"]:checked + .label {
+  background: #9b1e1eed;
   color: #fff;
 }

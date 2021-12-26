@@ -31,11 +31,16 @@ const state = useSelector((state) => {
     return {
       currentUser: state.usersReducer.currentUser,
       isLoggedIn: state.usersReducer.isLoggedIn,
+      token: state.usersReducer.token,
     };
   });
 
+const config = {
+  headers: {Authorization : `Bearer ${state.token}`},
+};
+
 const [cmt, setCmt] = useState();
-const [rt, setRt] = useState();
+const [rt, setRt] = useState("5");
 
 const changeCmt = (e) => {
     setCmt(e.target.value);
@@ -48,6 +53,7 @@ const ratingChange = (e) => {
   };
 
 const setReview = () => {
+  // console.log(config);
     axios.post("http://localhost:8080/Places/addReview", {
         id : data.id,
         reviews :[{
@@ -55,7 +61,7 @@ const setReview = () => {
         comment: cmt,
         user: {id: state.currentUser.id}
         }]
-    }).then((res) => {
+    }, config).then((res) => {
             console.log(res.data);
             getInfo();
           })
@@ -75,7 +81,7 @@ const setReview = () => {
             {data !== undefined ? (
               <div class="blog_cont">
                 <img
-                  src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8587f199412131.5ef23f961f9e0.jpg"
+                  src={data.image}
                   alt="place"
                 />
                 <h3>{data.name}</h3>
