@@ -31,11 +31,11 @@ body{
 
 .wallpaper{
   background-image: linear-gradient(
-    #63636363,
+    #63636363 70%,
     #E1E1E1
   ),
   url(./images/papers.png);
-  min-height: 90vh;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
@@ -43,6 +43,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: stretch;
+  margin-bottom: 5%;
 
 }
 

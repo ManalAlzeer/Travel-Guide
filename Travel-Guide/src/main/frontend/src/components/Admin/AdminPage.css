@@ -209,12 +209,12 @@
 
 .users-list .comment-body{
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 80px auto 40px;
     padding-bottom: 15px;
 }
 
 .users-list .comment-body .contact_text p{
-    font-size: 14px;
+    font-size: 11px;
 
 }
 .users-list .comment-body .contact_text h4{
@@ -233,13 +233,59 @@
 
 .Places-list .comment-body{
     display: grid;
-    grid-template-columns: 80px auto;
+    grid-template-columns: 80px auto 40px;
     padding-bottom: 15px;
 }
 
-.Places-list .comment-body .contact_text p{
-    font-size: 14px;
-}
 .Places-list .comment-body .contact_text h4{
     color: #2D2422;
 }
+
+.Places-list .comment-body .contact_text .reduceP{
+    font-size: 14px;
+    display: inline-block;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.Places-list .comment-body .contact_text .location{
+    color: #555555a6;
+    font-size: 11px;
+}
+
+
+/* close button  */
+.Places-list .comment-body .close,
+.users-list .comment-body .close {
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+  }
+  .Places-list .comment-body .close:hover,
+  .users-list .comment-body .close:hover {
+    opacity: 2;
+  }
+  .Places-list .comment-body .close:before, .close:after,
+  .users-list .comment-body .close:before, .close:after{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 6px;
+    content: ' ';
+    height: 10px;
+    width: 2px;
+    background-color: #9b1e1eed;
+  }
+  .Places-list .comment-body .close:before,
+  .users-list .comment-body .close:before {
+    transform: rotate(45deg);
+  }
+  .Places-list .comment-body .close:after,
+  .users-list .comment-body .close:after {
+    transform: rotate(-45deg);
+  }
+  
+  .sm-p{
+      color: #555555a6;
+  }

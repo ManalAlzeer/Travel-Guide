@@ -6,6 +6,8 @@ import com.example.TravelGuide.Tags.Tags;
 import com.example.TravelGuide.Trips.Trips;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -30,14 +32,17 @@ public class Places {
 
     @ManyToMany
     @JsonIgnoreProperties("places")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Tags> tag = new ArrayList<>();
 
     @JsonIgnoreProperties("places")
     @ManyToMany(mappedBy = "places")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Trips> trips = new ArrayList<>();
 
     @OneToMany
     @JoinColumn(name = "place_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     List<Reviews> reviews = new ArrayList<>();
 
 

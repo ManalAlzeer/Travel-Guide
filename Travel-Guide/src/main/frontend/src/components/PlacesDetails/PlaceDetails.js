@@ -114,11 +114,11 @@ const setReview = () => {
           ? data.reviews.map((e, i) => {
               return (
           <div class="comment-body">
-              <img onClick={() => { navigate(`/Profile/${e.user.id}`);}} src={e.user.image}
+              <img onClick={() => { navigate(`/Profile/${e.user.id}`);}} src={e.user.image || "http://via.placeholder.com/90"}
               className="re-pic pointer" alt={e.user.username} />
               <div class="contact_text">
                 <h4 className="pointer" onClick={() => { navigate(`/Profile/${e.user.id}`);}}>{e.user.username}</h4>
-                <p>{e.comment}</p>
+                <p className="comment-p">{e.comment}</p>
                 {[...Array(e.rating)].map((_, i) => {return(
                     <label class="fa fa-star" style={{color:'yellow'}}></label>
                 )})}

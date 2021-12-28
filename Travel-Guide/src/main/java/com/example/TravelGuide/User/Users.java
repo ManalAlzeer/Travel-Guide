@@ -1,9 +1,12 @@
 package com.example.TravelGuide.User;
 
 import com.example.TravelGuide.Places.Places;
+import com.example.TravelGuide.Reviews.Reviews;
 import com.example.TravelGuide.Trips.Trips;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,6 +31,12 @@ public class Users {
     @JsonIgnoreProperties("users")
     @ManyToMany(mappedBy = "users")
     private List<Trips> trips = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private List<Reviews> reviews = new ArrayList<>();
+
 
     public Users() {
     }

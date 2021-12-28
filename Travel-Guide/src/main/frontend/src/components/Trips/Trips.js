@@ -1,6 +1,6 @@
 function Trips() {
 
-    return (<></>
+    return (<><h1>Hi from Trips</h1></>
   
     );
   }

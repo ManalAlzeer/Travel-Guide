@@ -3,23 +3,39 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { storage } from "../firebase/firebase";
+import { useSelector } from "react-redux";
+
 
 function AdminPage() {
+  const state = useSelector((state) => {
+    return {
+      token: state.usersReducer.token,
+    };
+  });
+  const config = {
+    headers: {Authorization : `Bearer ${state.token}`},
+  };
+
   const navigate = useNavigate();
   const [TotalPlaces, setTotalPlaces] = useState();
+  const [Places, setPlaces] = useState();
+  const [Users, setUsers] = useState();
+  const [Cities, setCities] = useState();
   const [TotalCities, setTotalCities] = useState();
   const [TotalCountries, setTotalCountries] = useState();
   const [TotalTags, setTotalTags] = useState();
+  const [Tags, setTags] = useState();
 
   useEffect(() => {
-    getTotalsInfo();
+    getInfo();
   }, []);
 
-  // totals For first div
-  const getTotalsInfo = () => {
+// All info
+  const getInfo = () => {
     axios.get(`http://localhost:8080/Places/`).then((res) => {
       console.log("Plasec", res.data.length);
       setTotalPlaces(res.data.length);
+      setPlaces(res.data);
     });
     axios.get(`http://localhost:8080/Countries`).then((res) => {
       console.log("Countries", res.data.length);
@@ -28,10 +44,16 @@ function AdminPage() {
     axios.get(`http://localhost:8080/Cities`).then((res) => {
       console.log("cities", res.data.length);
       setTotalCities(res.data.length);
+      setCities(res.data);
     });
     axios.get(`http://localhost:8080/Tags`).then((res) => {
       console.log("Tags:", res.data.length);
       setTotalTags(res.data.length);
+      setTags(res.data);
+    });
+    axios.get(`http://localhost:8080/Users`).then((res) => {
+      console.log("Users:", res.data.length);
+      setUsers(res.data);
     });
   };
 
@@ -41,7 +63,7 @@ function AdminPage() {
   const [progress, setProgress] = useState(0);
 
   const handleChange = (e) => {
-    setInfo(e.target.value.split("\\").pop());
+    setPicInfo(e.target.value.split("\\").pop());
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
     }
@@ -67,12 +89,92 @@ function AdminPage() {
           .getDownloadURL()
           .then((url) => {
             setUrl(url);
+            console.log(url);
           });
       }
     );
   };
-  const [info, setInfo] = useState("");
+  const [PicInfo, setPicInfo] = useState("");
 
+  const [selectedCities, setselectedCities] = useState("");
+  const [selectedTags, setselectedTags] = useState([]);
+  const [selectedDes, setselectedDes] = useState("");
+  const [selectedName, setselectedName] = useState("");
+  const [selectedLocation, setselectedLocation] = useState("");
+
+  const handleLocation = (e) =>{
+    setselectedLocation(e.target.value);
+  }
+  const handleCities = (e) =>{
+    setselectedCities(e.target.value);
+  }
+  const tagsChange = (e) => {
+    setselectedTags([...selectedTags, {id: e.target.value}]);
+    console.log(selectedTags);
+  }
+  const descChange = (e)=>{
+    setselectedDes(e.target.value);
+  }
+  const nameChange = (e)=>{
+    setselectedName(e.target.value);
+  }
+
+  const createPlace = () =>{
+    console.log("PlaceName: ",selectedName);
+    console.log("PlaceUrl: ",url);
+    console.log("Placedes: ",selectedDes);
+    console.log("PlaceCities: ",selectedCities);
+    console.log("PlaceTags: ",selectedTags);
+    console.log("PlaceLocation: ",selectedLocation);
+
+    axios
+    .post("http://localhost:8080/Places", {
+      name: selectedName,
+      description:selectedDes,
+      image: url,
+      location:selectedLocation,
+      city:{
+          id:selectedCities
+      },
+      tag:selectedTags
+  
+    },config)
+    .then((res) => {
+      console.log("secsussfull ", res.data);
+      getInfo();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
+  }
+
+  const deletePlace = (Place_id)=>{
+    // console.log(Place_id);  
+    axios
+    .delete(`http://localhost:8080/Places/${Place_id}`,config)
+    .then((res) => {
+      console.log("delete secsussfully");
+      getInfo();
+    })
+    .catch((err) => {
+      console.log(err);
+    }); 
+  }
+  const deleteUser = (User_id)=>{
+    console.log(User_id);  
+    axios
+    .delete(`http://localhost:8080/Users/${User_id}`,config)
+    .then((res) => {
+      console.log("delete secsussfully");
+      getInfo();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
+  
   return (
     <div className="admin-page">
       <p className="Admin-heading">We have</p>
@@ -106,7 +208,7 @@ function AdminPage() {
                 value={progress}
                 max="100"
               />
-              <p style={{ fontSize: "12px" }}>{info}</p>
+              <p style={{ fontSize: "12px" }}>{PicInfo}</p>
               <div className="grid-two">
               <label for="file-upload" className="custom-file-upload">
                       select image
@@ -123,33 +225,36 @@ function AdminPage() {
             name="CityName"
             placeholder="City Name"
             required=""
+            onChange={nameChange}
           />
-          <textarea placeholder="Description"></textarea>
-          {/* tags */}
+          <input
+            className="inputs"
+            type="text"
+            name="Location"
+            placeholder="Location"
+            required=""
+            onChange={handleLocation}
+          />
+          <textarea placeholder="Description" onChange={descChange} ></textarea>
           <div class="tags">
-            <a href class="color">
-              Hotal
-            </a>
-            <a href class="color">
-              Malls
-            </a>
-            <a href class="color">
-              Resturant
-            </a>
-            <a href class="color">
-              Plaeing Area
-            </a>
+          { Tags !== undefined ? 
+              Tags.map((e)=>{
+                return(
+            <label>
+            <input type="checkbox" name="chbox" onChange={tagsChange} value={e.id}/>
+            <span class="label" value={e.id}>{e.name} </span></label>
+            )
+          }) :""}
           </div>
-          <select class="search-slt" id="country">
+          <select onClick={handleCities} class="search-slt" id="City">
             <option>Select country</option>
-            <option>Select country</option>
-            <option>Select country</option>
-            <option>Select country</option>
-            <option>Select country</option>
-            <option>Select country</option>
+            { Cities !== undefined ? 
+              Cities.map((e)=>{
+                return(<option value={e.id}>{e.name}</option>)
+              }) :""}
           </select>
 
-          <button className="upload-btn">
+          <button className="upload-btn" onClick={()=>{createPlace();}}>
                 Create
               </button>
         </div>
@@ -159,66 +264,52 @@ function AdminPage() {
         <div>
           <p className="Admin-heading">Users List</p>
           <div className="users-list">
+          {Users !== undefined ? 
+           Users.map((e)=>{
+            return(
             <div className="comment-body">
               <img
-                src="http://via.placeholder.com/100"
+                src={e.image || "http://via.placeholder.com/60"}
                 className="re-pic pointer"
                 alt=""
+                onClick={() => { navigate(`/Profile/${e.id}`);}}
               />
               <div class="contact_text">
-                <h4 className="pointer">Manal Alzeer</h4>
-                <p>Have 7 Trips</p>
+                <h4 className="pointer" onClick={() => { navigate(`/Profile/${e.id}`);}}>{e.username}</h4>
+                <p style={{color:'#d3a65a'}}>{e.id === 1 ? "Admin" : "Traveler"}</p>
+                <p className="sm-p">{e.email}</p>
               </div>
-            </div>
-            <div className="comment-body">
-              <img
-                src="http://via.placeholder.com/100"
-                className="re-pic pointer"
-                alt=""
-              />
-              <div class="contact_text">
-                <h4 className="pointer">Sara Saad</h4>
-                <p>Have 8 Trips</p>
-                <p>Email: Manal.alzeer.ruh.java@tuwaiq.sa</p>
-                <p>Phone Number: 0544704266</p>
-              </div>
-            </div>
+              <a href onClick={()=>{deleteUser(e.id);}} className="close pointer" ></a>
+            </div>)
+          })
+            : " "}
           </div>
         </div>
 
         <div>
           <p className="Admin-heading">Places List</p>
           <div className="Places-list">
-            <div className="comment-body">
-              <img
-                src="http://via.placeholder.com/100"
-                className="re-pic pointer"
-                alt=""
-              />
-              <div class="contact_text">
-                <h4 className="pointer">Manal Alzeer</h4>
-                <p>
-                  Set inside an old train station, this unique shopping mall is
-                  the first in Spain to open every day of the year. It offers
-                  well-known brand stores, a food court, a
-                </p>
+            {Places !== undefined ?
+            Places.map((e)=>{
+              return(
+                <div className="comment-body">
+                <img
+                  src={e.image}
+                  className="re-pic pointer"
+                  alt=""
+                  onClick={() => { navigate(`/PlaceDetails/${e.id}`);}}
+                />
+                <div class="contact_text"  onClick={() => { navigate(`/PlaceDetails/${e.id}`);}}>
+                  <h4 className="pointer">{e.name}</h4>
+                  <p className="reduceP">{e.description}
+                  </p>
+                  <p className="location">{e.location}</p>
+                </div>
+                <a href onClick={()=>{deletePlace(e.id);}} className="close pointer" ></a>
               </div>
-            </div>
-            <div className="comment-body">
-              <img
-                src="http://via.placeholder.com/100"
-                className="re-pic pointer"
-                alt=""
-              />
-              <div class="contact_text">
-                <h4 className="pointer">Manal Alzeer</h4>
-                <p>
-                  Set inside an old train station, this unique shopping mall is
-                  the first in Spain to open every day of the year. It offers
-                  well-known brand stores, a food court, a
-                </p>
-              </div>
-            </div>
+              )
+            }):""}
+
           </div>
         </div>
       </div>

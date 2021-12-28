@@ -112,7 +112,7 @@ function Profile() {
                 <h3 className="title">{data.username}</h3>
                 <p className="first-color">{type}</p>
               </div>
-              {state.isLoggedIn && data.id == state.currentUser.id && (
+              {state.isLoggedIn && data.id === state.currentUser.id && (
                 <div className="upload">
                   <div className="two-div">
                     <label for="file-upload" className="custom-file-upload">
