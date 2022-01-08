@@ -75,6 +75,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
 //        add, delete and update trips "New"
+
+        http.authorizeRequests().antMatchers( HttpMethod.POST,"/Trips/{TripId}/users/{UserId}").hasAnyAuthority("Admin","Traveler");//////////
         http.authorizeRequests().antMatchers( HttpMethod.POST,"/Trips/**").hasAnyAuthority("Admin","Traveler");
         http.authorizeRequests().antMatchers( HttpMethod.DELETE,"/Trips/**").hasAnyAuthority("Admin","Traveler");
         http.authorizeRequests().antMatchers( HttpMethod.PUT,"/Trips/**").hasAnyAuthority("Admin","Traveler");

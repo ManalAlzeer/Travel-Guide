@@ -112,7 +112,10 @@ function Profile() {
                 <h3 className="title">{data.username}</h3>
                 <p className="first-color">{type}</p>
               </div>
-              {state.isLoggedIn && data.id === state.currentUser.id && (
+              {console.log("cId: ",state.currentUser.id)}
+              {console.log("Id: ",data.id)}
+              {console.log("isLoggedIn: ",state.isLoggedIn)}
+              {state.isLoggedIn && data.id == state.currentUser.id && (
                 <div className="upload">
                   <div className="two-div">
                     <label for="file-upload" className="custom-file-upload">
@@ -166,7 +169,7 @@ function Profile() {
             </div>
           </>
         ) : (
-          "wait"
+          ""
         )}
 
         <div className="trips-card">
@@ -178,19 +181,19 @@ function Profile() {
               ? data.trips.map((e, i) => {
                   return (
                     <div
-                      className="tp-card"
+                      className="ticket"
                       key={i}>
-                      <div className="plaace-card">
-                        {e.places.map((el, i) => {
-                          return <p key={i} onClick={() => {
-                            navigate(`/PlaceDetails/${el.id}`);
-                          }}>{el.name}</p>;
-                        })}
+                        <div className="plaace-card">
+                          {e.places.map((el, i) => {
+                            return <p key={i} onClick={() => {
+                              navigate(`/TripsDetails/${el.id}`);
+                            } }>{el.name}</p>;
+                          })}
+                        </div>
+                        {/* <p>TripID: {e.id}</p> */}
+                        <p>From: {e.departure_date}</p>
+                        <p>To: {e.return_date}</p>
                       </div>
-                      {/* <p>TripID: {e.id}</p> */}
-                      <p>From: {e.departure_date}</p>
-                      <p>To: {e.return_date}</p>
-                    </div>
                   );
                 })
               : ""}

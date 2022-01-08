@@ -66,3 +66,7 @@ body{
 .third-color{
   color: #9b1e1eed;
 }
+
+.text-muted {
+  color: #919aa3 !important;
+}

@@ -184,7 +184,7 @@
 }
 
   /* Users List */
-.users-list{
+.third-div .users-list{
   display: grid;
   width: 100%;
   padding: 5% 10%;
@@ -193,7 +193,7 @@
   background: #fff;
 }
 
-.users-list .re-pic{
+.third-div .users-list .re-pic{
     width: 50px;
     height: 46px;
     box-shadow: 0 5px 15px -8px rgb(0 0 0 / 24%), 0 8px 10px -5px rgb(0 0 0 / 20%);
@@ -207,17 +207,17 @@
     transform: translate3d(0, 0, 0);
 }
 
-.users-list .comment-body{
+.third-div .users-list .comment-body{
     display: grid;
     grid-template-columns: 80px auto 40px;
     padding-bottom: 15px;
 }
 
-.users-list .comment-body .contact_text p{
+.third-div .users-list .comment-body .contact_text p{
     font-size: 11px;
 
 }
-.users-list .comment-body .contact_text h4{
+.third-div .users-list .comment-body .contact_text h4{
     color: #2D2422;
 }
 

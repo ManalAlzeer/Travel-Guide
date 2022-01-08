@@ -1,5 +1,7 @@
 package com.example.TravelGuide.Trips;
 
+import com.example.TravelGuide.Places.Places;
+import com.example.TravelGuide.User.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +45,7 @@ public class TripsController {
     }
 //    int TripId, int UserId
     @PutMapping("/{TripId}/users/{UserId}")
-    public Trips addUsersToTrips(@RequestBody @PathVariable int TripId, @PathVariable int UserId) {
+    public Trips addUsersToTrips(@PathVariable int TripId, @PathVariable int UserId) {
         return tripsService.addUsersToTrips(TripId,UserId);
     }
 }

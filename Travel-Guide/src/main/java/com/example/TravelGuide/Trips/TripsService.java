@@ -1,5 +1,6 @@
 package com.example.TravelGuide.Trips;
 
+import com.example.TravelGuide.Places.Places;
 import com.example.TravelGuide.Reviews.Reviews;
 import com.example.TravelGuide.Reviews.ReviewsRepository;
 import com.example.TravelGuide.User.Users;
