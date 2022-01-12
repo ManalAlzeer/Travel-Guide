@@ -18,33 +18,73 @@ function Profile() {
   const navigate = useNavigate();
   const [data, setData] = useState();
   const [type, setType] = useState("Traveler");
+  const [cities, setCities] = useState();
+  const [Places, setPlaces] = useState();
   const { id } = useParams();
+  const [selectedCity, setselectedCity] = useState(undefined);
+  const [selectedPlaces, setselectedPlaces] = useState("");
+  const [departure, setdeparture] = useState();
+  const [returnDate, setreturnDate] = useState();
+  const [PicInfo, setPicInfo] = useState("");
+
+  const handleSelectedCity = (e) => {
+    setselectedCity(e.target.value);
+    console.log("City: ", e.target.value);
+
+    axios
+      .get(`http://localhost:8080/Cities/${e.target.value}`)
+      .then((res) => {
+        setPlaces(res.data.places);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const handleselectedPlaces = (e) => {
+    console.log(e.target.value);
+    setselectedPlaces([...selectedPlaces, { id: e.target.value }]);
+    console.log("Places: ", selectedPlaces);
+  };
+  const departure_date = (e) => {
+    setdeparture(e.target.value);
+    console.log("departure: ", departure);
+  };
+  const return_date = (e) => {
+    setreturnDate(e.target.value);
+    console.log("returnDate: ", returnDate);
+  };
 
   const config = {
-    headers: {Authorization : `Bearer ${state.token}`},
+    headers: { Authorization: `Bearer ${state.token}` },
   };
 
   useEffect(() => {
     getInfo();
-    console.log("CurrentUser: ",state.currentUser);
-    console.log("UserToken: ", state.token);
-    console.log("IsLogIn: ", state.isLoggedIn);
   }, []);
 
-  const getInfo = () =>{
+  const getInfo = () => {
     axios
-    .get(`http://localhost:8080/Users/${id}`)
-    .then((res) => {
-      console.log(res.data);
-      setData(res.data);
-      if (res.data.id === 1) {
-        setType("Admin");
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
+      .get(`http://localhost:8080/Users/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+        if (res.data.id === 1) {
+          setType("Admin");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    axios
+      .get("http://localhost:8080/Cities/")
+      .then((res) => {
+        setCities(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   // image upload
   const [image, setImage] = useState(null);
@@ -79,9 +119,13 @@ function Profile() {
           .then((url) => {
             setUrl(url);
             axios
-              .put(`http://localhost:8080/Users/image/${data.id}`, {
-                image: "" + url + "",
-              },config)
+              .put(
+                `http://localhost:8080/Users/image/${data.id}`,
+                {
+                  image: "" + url + "",
+                },
+                config
+              )
               .then((res) => {
                 getInfo();
               })
@@ -93,7 +137,30 @@ function Profile() {
     );
   };
 
-  const [PicInfo, setPicInfo] = useState("");
+  const CreateTrip = () => {
+    console.log("info");
+    console.log("to: ", departure);
+    console.log("return: ", returnDate);
+    console.log("currntUser", state.currentUser.id);
+    console.log("places", selectedPlaces);
+
+    axios
+    .post("http://localhost:8080/Trips",{
+      departure_date: departure,
+      return_date: returnDate,
+      users: [{
+          id:state.currentUser.id
+      }],
+      places: selectedPlaces
+},config)
+    .then(() => {
+      getInfo();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  };
+
   return (
     <div className="profile-des">
       <div className="page-header"></div>
@@ -112,9 +179,9 @@ function Profile() {
                 <h3 className="title">{data.username}</h3>
                 <p className="first-color">{type}</p>
               </div>
-              {console.log("cId: ",state.currentUser.id)}
-              {console.log("Id: ",data.id)}
-              {console.log("isLoggedIn: ",state.isLoggedIn)}
+              {console.log("cId: ", state.currentUser.id)}
+              {console.log("Id: ", data.id)}
+              {console.log("isLoggedIn: ", state.isLoggedIn)}
               {state.isLoggedIn && data.id == state.currentUser.id && (
                 <div className="upload">
                   <div className="two-div">
@@ -180,25 +247,78 @@ function Profile() {
             {data !== undefined
               ? data.trips.map((e, i) => {
                   return (
-                    <div
-                      className="ticket"
-                      key={i}>
-                        <div className="plaace-card">
-                          {e.places.map((el, i) => {
-                            return <p key={i} onClick={() => {
-                              navigate(`/TripsDetails/${el.id}`);
-                            } }>{el.name}</p>;
-                          })}
-                        </div>
-                        {/* <p>TripID: {e.id}</p> */}
-                        <p>From: {e.departure_date}</p>
-                        <p>To: {e.return_date}</p>
-                      </div>
+                    <div className="ticket plaace-card pointer" key={i} onClick ={ ()=>{
+                      navigate(`/TripsDetails/${e.id}`);
+                    }} >
+                      <p>From: {e.departure_date}</p>
+                      <p>To: {e.return_date}</p>
+                    </div>
                   );
                 })
               : ""}
           </div>
         </div>
+
+        {state.currentUser.id == id && (<div className="trips-cr">
+          <h6 className="m-b-20 p-b-5 b-b-default ">
+            <div className="b-size">Create Trips</div>
+          </h6>
+          <div className="card-body">
+            <div>
+            <input
+              className="inputs"
+              type="text"
+              name="Departure_date"
+              placeholder="Departure date"
+              required=""
+              onChange={departure_date}
+            />
+            <input
+              className="inputs"
+              type="text"
+              name="Return_date"
+              placeholder="Return date"
+              required=""
+              onChange={return_date}
+            />
+            </div>
+
+            <select onClick={handleSelectedCity} class="search-city" id="city">
+              <option value="" disabled selected>
+                Select City
+              </option>
+              {cities !== undefined
+                ? cities.map((e) => {
+                    return <option value={e.id}>{e.name}</option>;
+                  })
+                : ""}
+            </select>
+
+            <select
+              onClick={handleselectedPlaces}
+              class="search-city"
+              id="city"
+              multiple
+            >
+              <option value="" disabled selected>
+                Places
+              </option>
+              {Places !== undefined
+                ? Places.map((e) => {
+                    return <option value={e.id}>{e.name}</option>;
+                  })
+                : ""}
+            </select>
+            <button
+              onClick={() => {
+                CreateTrip();
+              }}
+            >
+              {" "}
+              Create{" "}
+            </button>
+          </div>
+        </div>)}
       </div>
     </div>
   );
