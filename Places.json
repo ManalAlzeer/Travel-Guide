@@ -1,0 +1,268 @@
+[{
+    "name":"Ritz-Carlton",
+    "description":"Set 9 km from the Al Faisaliyah Center, this luxury hotel is 12 km from the National Museum of Saudi Arabia.Stately rooms have 37-inch flat-screens with premium channels, plus iPod docks and marble bathrooms. Wi-Fi is available. Room service is available 24/7. Suites add separate living areas and designer toiletries. Club level quarters provide entry to a lounge with free food, drink and Wi-Fi. Culinary options include 2 lounges and 3 restaurants offering Asian, Italian and Lebanese fare. There’s also a posh male-only spa, an indoor pool, and a gym with personal trainers, plus event space and a bowling alley.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fhotel%20riyadh.png?alt=media&token=4ac60b2f-c99f-48c9-bb0f-bbe560f3ec8f",
+    "location":"Jeddah Rd, طريق مكة المكرمة، Riyadh 11493",
+    "city":{
+        "id":1
+    },
+    "tag":[
+        {
+            "id":1
+        },{
+            "id":2
+        },{
+            "id":3
+        },{
+            "id":4
+        },{
+            "id":9
+        },{
+            "id":7
+        },{
+            "id":6
+        }
+        ]
+},{
+    "name":"Al Faisaliyah Centre",
+    "description":"is a commercial skyscraper and mixed-use complex located in the business district of Riyadh, Saudi Arabia. The 267-metre-high office tower, the centrepiece of the Foster + Partners development, it is notable for having been the first skyscraper built in Saudi Arabia, and for the monumental stained glass wall of its lobby, designed by architectural artist Brian Clarke in collaboration with Norman Foster. Presently the fourth tallest building in Saudi Arabia after the Kingdom Centre, Burj Rafal and Abraj Al Bait, the Center presently ranks as the 325th tallest building in the world.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Ffisal.jpg?alt=media&token=cfb33906-d554-40b3-9538-22dbd942c770",
+    "location":"Al Faisaliyah Center, Al Olaya, Riyadh 12212",
+    "city":{
+        "id":1
+    },
+    "tag":[
+        {
+            "id":1
+        },{
+            "id":2
+        },{
+            "id":3
+        },{
+            "id":4
+        },{
+            "id":6
+        },{
+            "id":9
+        },{
+            "id":10
+        }
+        ]
+},{
+    "name":"The Boulevard Riyadh",
+    "description":"Saudi Arabia’s Riyadh Season 2021 kicked off in October in the Kingdom, Boulevard Riyadh city is one of the biggest zones in the season. Triple in size this year, each of the sub-areas features its own set of activities, restaurants, events, and outlets that are catered to all visitors.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fbole.jpeg?alt=media&token=a9e9081d-3ab6-4c75-9b68-dde78152d453",
+    "location":"Boulevard Riyadh City, Riyadh",
+    "city":{
+        "id":1
+    },
+    "tag":[
+        {
+            "id":5
+        },{
+            "id":7
+        },{
+            "id":4
+        },{
+            "id":9
+        },{
+            "id":10
+        }
+        ]
+},{
+    "name":"Masmak Fortress",
+    "description":"The Masmak Fort, also called the Masmak Fortress or Masmak Palace, is a clay and mudbrick fort in ad-Dirah, Riyadh, Saudi Arabia. Built in 1865 for prince 'Abdurrahman ibn Sulaiman AlDabaan under the Emirate of Jabal Shammar, The fortress played an integral role in the Unification of Saudi Arabia, with the Battle of Riyadh, one of the most important conflicts of the Saudi unification, taking place in the fort. Since 1995, the fortress has been converted into a museum showcasing one of the most important landmarks of Saudi heritage.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fmasmak.jpg?alt=media&token=968aa825-e865-4416-a9c9-0d0e7be6f6d0",
+    "location":"Qasr al-Masmak, Al Imam Turki ibn Abdullah ibn Muhammad, Dirah, Riyadh 12652",
+    "city":{
+        "id":1
+    },
+    "tag":[
+        {
+            "id":5
+        },{
+            "id":4
+        },{
+            "id":7
+        },{
+            "id":8
+        },{
+            "id":9
+        }
+        ]
+},{
+    "name":"King Fahad's Fountain",
+    "description":"King Fahd's Fountain, also known as the Jeddah Fountain, is in Jeddah, Saudi Arabia. It is the tallest fountain of its type in the world.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fking%20fahad%20f.jpg?alt=media&token=9a62f2cf-8b41-40a6-954a-a78b85b0473d",
+    "location":"Meeza International Tourism Services Co. Ltd، Jeddah",
+    "city":{
+        "id":2
+    },
+    "tag":[
+        {
+            "id":5
+        },{
+            "id":4
+        },{
+            "id":7
+        },{
+            "id":3
+        },{
+            "id":9
+        }
+        ]
+},{
+    "name":"Jeddah Corniche",
+    "description":"With its long stretches of sandy beaches and cool walkways, Jeddah Corniche has always been one of the city’s main draws. Following a major revamp in 2017, which added three new swimming bays, a winding pier and lush parklands, the area is now a must-see destination, blending seamlessly with Jeddah’s cosmopolitan appeal.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fjeddah-cor.jpg?alt=media&token=de91fdb0-2793-48bb-b68b-fc7bd09ba56e",
+    "location":"Jeddah 23510",
+    "city":{
+        "id":2
+    },
+    "tag":[
+        {
+            "id":5
+        },{
+            "id":6
+        },{
+            "id":7
+        },{
+            "id":9
+        },{
+            "id":4
+        },{
+            "id":3
+        }
+        ]
+},{
+    "name":"Makkah Clock Royal Tower",
+    "description":"Situated only 100 m from Masjid al-Haram, this 76 storey luxury hotel is one of the tallest buildings in the world and is inside Makkah Clock Tower. It offers a fully equipped fitness centre, hot tub, sauna and a steam room. It includes a 24-hour concierge services.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fmakkah-clock.jpg?alt=media&token=fa0f1e7a-0a7c-448b-906a-37e9a6b4acea",
+    "location":"King Abdul Aziz Rd, Endowment, Ajyad Street, Makkah al-Mukarramah 24231",
+    "city":{
+        "id":3
+    },
+    "tag":[{
+            "id":6
+        },{
+            "id":9
+        },{
+            "id":4
+        },{
+            "id":3
+        },{
+            "id":2
+        },{
+            "id":1
+        }
+        ]
+},{
+    "name":"El Retiro Park",
+    "description":"The Buen Retiro Park, Retiro Park or simply El Retiro is one of the largest parks of the city of Madrid, Spain. The park belonged to the Spanish Monarchy until the late 19th century, when it became a public park. In 2021, Buen Retiro Park became part of a combined UNESCO World Heritage Site with Paseo del Prado.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fheart-park-lies-Retiro-Park-Lake-which.jpg?alt=media&token=bf7b467d-b180-4aad-808b-bcd76182b134",
+    "location":"Plaza de la Independencia, 7, 28001 Madrid, Spain",
+    "city":{
+        "id":14
+    },
+    "tag":[
+        {
+            "id":5
+        },{
+            "id":4
+        },{
+            "id":8
+        },{
+            "id":7
+        }
+        ]
+},{
+    "name":"Temple of Debod",
+    "description":"The Temple of Debod is an ancient Egyptian temple that was dismantled and rebuilt in the center of Madrid, Spain, in Parque de la Montaña, Madrid, a square located Calle de Irún, 21–25 Madrid.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fspin-mu.jpg?alt=media&token=af8c906d-26c9-4c3f-96c2-cbc99f5e3144",
+    "location":"C. de Ferraz, 1, 28008 Madrid, Spain",
+    "city":{
+        "id":14
+    },
+    "tag":[
+        {
+            "id":4
+        },{
+            "id":8
+        },{
+            "id":5
+        }
+        ]
+},{
+    "name":"Mandarin Oriental Ritz, Madrid",
+    "description":"Mandarin Oriental Ritz, Madrid is a luxury Belle Époque palace located in the famous Golden Triangle of Art of Madrid. For over 110 years, the hotel has hosted royalty, dignitaries and some of the most distinguished guests from around the world. This spectacular property is the epitome of luxury and excellence. With a stunning and meticulous restoration that celebrates César Ritz’s pioneering spirit, a prestigious central location, five restaurants and bars overseen by one of Spain’s most celebrated chefs and exceptional fitness and wellness facilities, Mandarin Oriental Ritz, Madrid is set to become the city’s most luxurious hotel.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMadrid-hotal.jpg?alt=media&token=c0132c1d-8b08-4698-8143-3812a6c8eb49",
+    "location":"Pl. de la Lealtad, 5, 28014 Madrid, Spain",
+    "city":{
+        "id":14
+    },
+    "tag":[
+        {
+            "id":1
+        },{
+            "id":2
+        },{
+            "id":3
+        },{
+            "id":4
+        },{
+            "id":6
+        },{
+            "id":8
+        },{
+            "id":9
+        },{
+            "id":10
+        }
+        ]
+},{
+    "name":"Madrid Marriott Auditorium",
+    "description":"Madrid Marriott Auditorium Hotel & Conference Center, located between International Airport and city center, is the perfect place to hold any kind of event and conference with innovation and style. 56 panelled and no column meeting rooms with 3,70 to 4,20 high, wide galleries for conventions, exhibitions and fairs as well as the impressive Auditorium for up to 2.000 seats make it one of the most exclusive and unique areas of Europe. 869 rooms, an extensive variety of restaurant spaces as the new concept in Madrid Buffet, the exclusive.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMadrid%20Marriott%20Auditorium.jpeg?alt=media&token=75776ba8-c2ca-4b63-988c-5112fed2116a",
+    "location":"Av. de Aragón, 400, 28022 Madrid, Spain",
+    "city":{
+        "id":14
+    },
+    "tag":[
+        {
+            "id":1
+        },{
+            "id":2
+        },{
+            "id":3
+        },{
+            "id":4
+        },{
+            "id":6
+        }
+        ]
+},{
+    "name":"Centro Comercial Príncipe Pío",
+    "description":"Set inside an old train station, this unique shopping mall is the first in Spain to open every day of the year. It offers well-known brand stores, a food court, and entertainment options.",
+    "image": "https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FCentro_Comercial_Principe_Pio_Entrada.jpg?alt=media&token=342752ed-209d-4c1d-bcd8-b819d2d1a275",
+    "location":"P.º de la Florida, 2, 28008 Madrid, Spain",
+    "city":{
+        "id":14
+    },
+    "tag":[{
+            "id":9
+        },{
+            "id":5
+        },{
+            "id":4
+        },{
+            "id":3
+        },{
+            "id":7
+        },{
+            "id":8
+        },{
+            "id":10
+        }
+        ]
+}
+]

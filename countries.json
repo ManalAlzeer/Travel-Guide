@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Saudi Arabia",
+    "continents": "Asia",
+    "language": "Arabic, English"
+  },
+  {
+    "name": "United Arab Emirates",
+    "continents": "Asia",
+    "language": "Arabic, English"
+  },
+  {
+    "name": "France",
+    "continents": "Europe",
+    "language": "French, Italian, Spanish, English"
+  },
+  {
+    "name": "Italy",
+    "continents": "Europe",
+    "language": "French, Italian, Spanish, English, Turkish"
+  },
+  {
+    "name": "Morocco",
+    "continents": "Africa",
+    "language": "Arabic, French, Spanish, English, Berberi"
+  },
+  {
+    "name": "Germany",
+    "continents": "Europe",
+    "language": "German, Greek, Italian, Polish, Turkish"
+  },
+  {
+    "name": "Spain",
+    "continents": "Europe",
+    "language": "Basque, Catalan, Galecian ,Spanish"
+  },
+  {
+    "name": "Japan",
+    "continentss": "Asia",
+    "language": "Ainu, Chinese ,English ,Japanese ,Korean ,Philippene Languages"
+  },
+  {
+    "name": "China",
+    "continents": "Asia",
+    "language": "Chinese, Dong, Hui, Mant¬öu, Miao ,Mongolian, Puyi, Tibetan, Tujia, Uighur, Yi, Zhuang"
+  },
+  {
+    "name": "Bahrain",
+    "continents": "Asia",
+    "language": "Arabic, English"
+  },
+  {
+    "name": "South Africa",
+    "continents": "Africa",
+    "language": "Arabic, Afrikaans, English, Ndebele, Northsotho, Southsotho, Swazi, Tsonga"
+  },
+  {
+    "name": "Egypt",
+    "continents": "Africa",
+    "language": "Arabic"
+  },
+  {
+    "name": "United Kingdom",
+    "continents": "Europe",
+    "language": "English"
+  },
+  {
+    "name": "United States",
+    "continents": "North America",
+    "language": "English, Chinese, French, German, Italian, Japanese, Korean, Polish, Portuguese, Spanish"
+  },
+  {
+    "name": "Canada",
+    "continents": "North America",
+    "language": "English, Chinese, French, German, Italian, Japanese, Korean, Polish, Portuguese, Spanish"
+  },{
+    "name": "Mexico",
+    "continents": "North America",
+    "language": "Mixtec, Spanish, Yucatec, Zapotec, English"
+}
+]

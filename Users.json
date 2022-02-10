@@ -1,0 +1,40 @@
+[
+    {
+        "username": "Ahmed Ali",
+        "password": "1111",
+        "image":"Image",
+        "age": 23,
+        "phoneNumber":"055453250",
+        "email":"Ahmed@tuwaiq.sa",
+        "gender":"Male",
+        "role": "Traveler"
+    },{
+        "username": "Sara Saad",
+        "password": "Sara",
+        "image":"Image",
+        "age": 25,
+        "phoneNumber":"0543896426",
+        "email":"sara@tuwaiq.sa",
+        "gender":"Female",
+        "role": "Traveler"
+    },{
+        "username": "Khaled Mohammed",
+        "password": "123456",
+        "image":"Image",
+        "age": 39,
+        "phoneNumber":"0558994750",
+        "email":"Khaled@tuwaiq.sa",
+        "gender":"Male",
+        "role": "Traveler"
+    },{
+        "username": "Abdulaziz Saud",
+        "password": "Abdulaziz",
+        "image":"Image",
+        "age": 26,
+        "phoneNumber":"0555547509",
+        "email":"Abdulaziz@tuwaiq.sa",
+        "gender":"Male",
+        "role": "Traveler"
+    }
+]
+    

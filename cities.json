@@ -1,0 +1,213 @@
+[
+    {
+        "name": "Riyadh",
+        "description": "Riyadh, Saudi Arabia’s capital and main financial hub, is on a desert plateau in the country’s center. Business district landmarks include the 302m-high Kingdom Centre, with a sky bridge connecting 2 towers, and 267m-high Al Faisaliah Centre, with a glass-globe summit. In the historical Deira district, Masmak Fort marks the site of the 1902 raid that gave the Al Sauds control of Riyadh.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Friyadh.jpg?alt=media&token=1af3b816-7ee9-44b1-a862-c30bd68bf594",
+        "country": {
+            "id":1
+        }
+    },{
+        "name": "Jeddah",
+        "description": "Jeddah, a Saudi Arabian port city on the Red Sea, is a modern commercial hub and gateway for pilgrimages to the Islamic holy cities Mecca and Medina. Resort hotels, beaches and outdoor sculptures line the Corniche, a seafront promenade anchored by the iconic King Fahd’s Fountain. The city’s Al-Balad historic district dates to the 7th century and retains traditional homes built from coral.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fjeddah.jpg?alt=media&token=f24c0a7a-e7c7-4c65-8816-0fccda726cfe",
+        "country": {
+            "id":1
+        }
+    },{
+        "name": "Makkah",
+        "description": "Mecca, in a desert valley in western Saudi Arabia, is Islam’s holiest city, as it’s the birthplace of the Prophet Muhammad and the faith itself. Only Muslims are allowed in the city, with millions arriving for the annual Hajj (pilgrimage). Dating from the 7th century, the central Masjid al-Haram (Sacred Mosque) surrounds the Kaaba, the cloth-covered cubic structure that’s Islam’s most sacred shrine.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fmakkah.jpg?alt=media&token=21050e22-ac3b-41cc-b4d4-3bd08743efee",
+        "country": {
+            "id":1
+        }
+    },{
+        "name": "Dubai",
+        "description": "Dubai is a city and emirate in the United Arab Emirates known for luxury shopping, ultramodern architecture and a lively nightlife scene. Burj Khalifa, an 830m-tall tower, dominates the skyscraper-filled skyline. At its foot lies Dubai Fountain, with jets and lights choreographed to music. On artificial islands just offshore is Atlantis, The Palm, a resort with water and marine-animal parks.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fdubai.jpeg?alt=media&token=3c543b31-a74e-4a5f-a983-4186d64c1423",
+        "country": {
+            "id":2
+        }
+    },{
+        "name": "Abu Dhabi",
+        "description": "Abu Dhabi, the capital of the United Arab Emirates, sits off the mainland on an island in the Persian (Arabian) Gulf. Its focus on oil exports and commerce is reflected by the skyline’s modern towers and shopping megacenters such as Abu Dhabi and Marina malls. Beneath white-marble domes, the vast Sheikh Zayed Grand Mosque features an immense Persian carpet, crystal chandeliers and capacity for 41,000 worshipers.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fabu%20dhabi.jpg?alt=media&token=db859bef-e9ee-4c1f-9dbf-cbe8a5d3595b",
+        "country": {
+            "id":2
+        }
+    },{
+        "name": "Paris",
+        "description": "Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fparis-f.jpg?alt=media&token=f558d2f0-d4ee-40b3-ae6a-7d645b932600",
+        "country": {
+            "id":3
+        }
+    },{
+        "name": "Marseille",
+        "description": "Marseille, a port city in southern France, has been a crossroads of immigration and trade since its founding by the Greeks circa 600 B.C. At its heart is the Vieux-Port (Old Port), where fishmongers sell their catch along the boat-lined quay. Basilique Notre-Dame-de-la-Garde is a Romanesque-Byzantine church. Modern landmarks include Le Corbusier’s influential Cité Radieuse complex and Zaha Hadid’s CMA CGM Tower.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMarseille.jpg?alt=media&token=11c22461-be7e-4c73-8268-f5fcd3629843",
+        "country": {
+            "id":3
+        }
+    },{
+        "name": "Rome",
+        "description": "Rome is the capital city of Italy. It is also the capital of the Lazio region, the centre of the Metropolitan City of Rome, and a special comune named Comune di Roma Capitale.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Frome-italy.jpg?alt=media&token=30258c76-e309-4a5b-b02c-f189eef0af5a",
+        "country": {
+            "id":4
+        }
+    },{
+        "name": "Milan",
+        "description": "Milan, a metropolis in Italy's northern Lombardy region, is a global capital of fashion and design. Home to the national stock exchange, it’s a financial hub also known for its high-end restaurants and shops. The Gothic Duomo di Milano cathedral and the Santa Maria delle Grazie convent, housing Leonardo da Vinci’s mural “The Last Supper,” testify to centuries of art and culture. ",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2Fmilan.jpg?alt=media&token=6fd0b3a3-4e73-45b1-80fe-e892f3c75783",
+        "country": {
+            "id":4
+        }
+    },{
+        "name": "Casablanca",
+        "description": "Casablanca is a port city and commercial hub in western Morocco, fronting the Atlantic Ocean. The city's French colonial legacy is seen in its downtown Mauresque architecture, a blend of Moorish style and European art deco. Standing partly over the water, the enormous Hassan II Mosque, completed in 1993, has a 210m minaret topped with lasers directed toward Mecca.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FCasablanca.jpg?alt=media&token=b2a1d556-027f-4860-84fc-ef9b0e659fc5",
+        "country": {
+            "id":5
+        }
+    },{
+        "name": "Marrakesh",
+        "description": "Marrakesh, a former imperial city in western Morocco, is a major economic center and home to mosques, palaces and gardens. The medina is a densely packed, walled medieval city dating to the Berber Empire, with mazelike alleys where thriving souks (marketplaces) sell traditional textiles, pottery and jewelry. A symbol of the city, and visible for miles, is the Moorish minaret of 12th-century Koutoubia Mosque.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMarrakesh.jpg?alt=media&token=bbc3774f-bc33-47d7-85b7-c67c2a3ee871",
+        "country": {
+            "id":5
+        }
+    },{
+        "name": "Berlin",
+        "description": "Berlin, Germany’s capital, dates to the 13th century. Reminders of the city's turbulent 20th-century history include its Holocaust memorial and the Berlin Wall's graffitied remains. Divided during the Cold War, its 18th-century Brandenburg Gate has become a symbol of reunification. The city's also known for its art scene and modern landmarks like the gold-colored, swoop-roofed Berliner Philharmonie, built in 1963.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FBerlin.jpg?alt=media&token=a4b4e838-5f4e-4beb-aa33-9ddcc5489d76",
+        "country": {
+            "id":6
+        }
+    },{
+        "name": "Munich",
+        "description": "Munich, Bavaria’s capital, is home to centuries-old buildings and numerous museums. The city is known for its annual Oktoberfest celebration and its beer halls, including the famed Hofbräuhaus, founded in 1589. In the Altstadt (Old Town), central Marienplatz square contains landmarks such as Neo-Gothic Neues Rathaus (town hall), with a popular glockenspiel show that chimes and reenacts stories from the 16th century.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMunich.jpg?alt=media&token=98c6b4db-02b2-431a-8c75-c77e422635d0",
+        "country": {
+            "id":6
+        }
+    },{
+        "name": "Madrid",
+        "description": "Madrid, Spain's central capital, is a city of elegant boulevards and expansive, manicured parks such as the Buen Retiro. It’s renowned for its rich repositories of European art, including the Prado Museum’s works by Goya, Velázquez and other Spanish masters. The heart of old Hapsburg Madrid is the portico-lined Plaza Mayor, and nearby is the baroque Royal Palace and Armory, displaying historic weaponry.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMadrid.jpg?alt=media&token=1f642b3c-88c6-43ce-b7ba-1cae6b7a556f",
+        "country": {
+            "id":7
+        }
+    },{
+        "name": "Barcelona",
+        "description": "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their namesakes. City history museum MUHBA, includes several Roman archaeological sites.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FBarcelona.jpg?alt=media&token=f6e5c333-8abb-44a9-9689-1b2861ead26d",
+        "country": {
+            "id":7
+        }
+    },{
+        "name": "Tokyo",
+        "description": "Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FTokyo.jpg?alt=media&token=ee5c16b4-87dc-4d03-b203-58a42a3fea40",
+        "country": {
+            "id":8
+        }
+    },{
+        "name": "Saitama",
+        "description": "Saitama is the capital and the most populous city of Saitama Prefecture, Japan. Its area incorporates the former cities of Urawa, Ōmiya, Yono and Iwatsuki. It is a city designated by government ordinance.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FSaitama.jpg?alt=media&token=8dfeed3e-6a1d-47b6-b4e8-41df73af0b90",
+        "country": {
+            "id":8
+        }
+    },{
+        "name": "Shanghai",
+        "description": "Shanghai, on China’s central coast, is the country's biggest city and a global financial hub. Its heart is the Bund, a famed waterfront promenade lined with colonial-era buildings. Across the Huangpu River rises the Pudong district’s futuristic skyline, including 632m Shanghai Tower and the Oriental Pearl TV Tower, with distinctive pink spheres. Sprawling Yu Garden has traditional pavilions, towers and ponds.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FShanghai.jpg?alt=media&token=ae7a7494-b207-4acc-a293-243696b217cd",
+        "country": {
+            "id":9
+        }
+    },{
+        "name": "Beijing",
+        "description": "Beijing, China’s sprawling capital, has history stretching back 3 millennia. Yet it’s known as much for modern architecture as its ancient sites such as the grand Forbidden City complex, the imperial palace during the Ming and Qing dynasties. Nearby, the massive Tiananmen Square pedestrian plaza is the site of Mao Zedong’s mausoleum and the National Museum of China, displaying a vast collection of cultural relics.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FBeijing.jpg?alt=media&token=00d6a38e-0b6e-4448-9f17-e35bf8e140b5",
+        "country": {
+            "id":9
+        }
+    },{
+        "name": "Manama",
+        "description": "Manama, the modern capital of the gulf island nation of Bahrain, has been at the center of major trade routes since antiquity. Its acclaimed Bahrain National Museum showcases artifacts from the ancient Dilmun civilization that flourished in the region for millennia. The city's thriving Bab el-Bahrain Souq offers wares from colorful handwoven fabrics and spices to pearls.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FManama.jpg?alt=media&token=bc2b28d6-72b5-4ec8-a6a5-61b658602291",
+        "country": {
+            "id":10
+        }
+    },{
+        "name": "Cape Town",
+        "description": "Cape Town is a port city on South Africa’s southwest coast, on a peninsula beneath the imposing Table Mountain. Slowly rotating cable cars climb to the mountain’s flat top, from which there are sweeping views of the city, the busy harbor and boats heading for Robben Island, the notorious prison that once held Nelson Mandela, which is now a living museum.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FCape%20Town.jpg?alt=media&token=f4578c8b-c97a-41da-9544-fffbb1194fb8",
+        "country": {
+            "id":11
+        }
+    },{
+        "name": "Pretoria",
+        "description": "Pretoria or Tshwane is one of South Africa’s three capital cities, serving as the seat of the executive branch of government, and as the host to all foreign embassies to South Africa. Cape Town is the legislative capital whereas Bloemfontein is the judicial capital.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FPretoria.jpg?alt=media&token=5ffdcd64-cbcd-4c5c-b1b7-c389a11960c7",
+        "country": {
+            "id":11
+        }
+    },{
+        "name": "Cairo",
+        "description": "Cairo, Egypt’s sprawling capital, is set on the Nile River. At its heart is Tahrir Square and the vast Egyptian Museum, a trove of antiquities including royal mummies and gilded King Tutankhamun artifacts. Nearby, Giza is the site of the iconic pyramids and Great Sphinx, dating to the 26th century BC. In Gezira Island’s leafy Zamalek district, 187m Cairo Tower affords panoramic city views.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FCairo.jpg?alt=media&token=656d3754-4b7e-42f5-b46c-1bb93a1f4ec0",
+        "country": {
+            "id":12
+        }
+    },{
+        "name": "Alexandria",
+        "description": "Egypt - Africa",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FAlexandria.jpg?alt=media&token=b8d65c18-c86e-4f4e-a950-f09552cd0708",
+        "country": {
+            "id":12
+        }
+    },{
+        "name": "London",
+        "description": "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FLondon.jpg?alt=media&token=ecf2c8fd-9906-4371-86c7-5eb2e18fb01d",
+        "country": {
+            "id":13
+        }
+    },{
+        "name": "Birmingham",
+        "description": "Birmingham is a major city in England’s West Midlands region, with multiple Industrial Revolution-era landmarks that speak to its 18th-century history as a manufacturing powerhouse. It’s also home to a network of canals, many of which radiate from Sherborne Wharf and are now lined with trendy cafes and bars. In the city centre, the Birmingham Museum and Art Gallery is known for pre-Raphaelite masterpieces. ",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FBirmingham.jpg?alt=media&token=d2347418-75b3-46ac-a024-d9b3cd00f2d3",
+        "country": {
+            "id":13
+        }
+    },{
+        "name": "New York",
+        "description": "New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park. Broadway theater is staged in neon-lit Times Square.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FNew%20York.jpg?alt=media&token=f20dbdf5-bc79-4115-bb83-5cbb0d2debc0",
+        "country": {
+            "id":14
+        }
+    },{
+        "name": "Los Angeles",
+        "description": "Los Angeles is a sprawling Southern California city and the center of the nation’s film and television industry. Near its iconic Hollywood sign, studios such as Paramount Pictures, Universal and Warner Brothers offer behind-the-scenes tours. On Hollywood Boulevard, TCL Chinese Theatre displays celebrities’ hand- and footprints, the Walk of Fame honors thousands of luminaries and vendors sell maps to stars’ homes.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FLos%20Angeles.jpg?alt=media&token=a997a013-2610-48b4-8a3c-09a61dcd3d07",
+        "country": {
+            "id":14
+        }
+    },{
+        "name": "Ottawa",
+        "description": "Ottawa is Canada’s capital, in the east of southern Ontario, near the city of Montréal and the U.S. border. Sitting on the Ottawa River, it has at its centre Parliament Hill, with grand Victorian architecture and museums such as the National Gallery of Canada, with noted collections of indigenous and other Canadian art. The park-lined Rideau Canal is filled with boats in summer and ice-skaters in winter.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FOttawa.jpg?alt=media&token=b9ce9fa8-4fab-47ea-ade0-b70d21cb7a6f",
+        "country": {
+            "id":15
+        }
+    },{
+        "name": "Mexico",
+        "description": "Mexico, officially the United Mexican States, is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and west by the Pacific Ocean; to the southeast by Guatemala, Belize, and the Caribbean Sea; and to the east by the Gulf of Mexico.",
+        "image":"https://firebasestorage.googleapis.com/v0/b/travel-guide-proj.appspot.com/o/images%2FMexico.jpg?alt=media&token=c31bb2ef-2fb3-4277-a6e6-e45811f61797",
+        "country": {
+            "id":16
+        }
+    }
+]
